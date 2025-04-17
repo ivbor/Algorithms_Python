@@ -21,7 +21,6 @@ This class defines a vector by specifying its starting capacity
 (and optional initial elements). The vector can dynamically resize
 itself to accommodate additional elements when needed.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>elements</strong>: <em>list or None, optional</em> <br>
@@ -39,121 +38,180 @@ __init__(self, elements: list[Any] | None = None, size: int = 0,
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Initializes a new Vector instance with optional initial elements,
-    size, and capacity.
+```
+Initializes a new Vector instance with optional initial elements,
+size, and capacity.
+```
+
 <br></li>
+
 <li> <a href='#function-__len__'><code>
 __len__(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Returns the number of elements in the vector.
+```
+Returns the number of elements in the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-__contains__'><code>
 __contains__(self, x: Any) -> bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Checks if a given element is present in the vector.
+```
+Checks if a given element is present in the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-__setitem__'><code>
 __setitem__(self, i: int, x: Any) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sets the element at the specified index in the vector.
+```
+Sets the element at the specified index in the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-__getitem__'><code>
 __getitem__(self, i: int) -> Any
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Retrieves the element at the specified index from the vector.
+```
+Retrieves the element at the specified index from the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-__delitem__'><code>
 __delitem__(self, i: int) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Deletes the element at the specified index from the vector.
+```
+Deletes the element at the specified index from the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-copy_to_new_vector'><code>
 copy_to_new_vector(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Creates a new vector and copies elements from the current vector
-    to the new one.
+```
+Creates a new vector and copies elements from the current vector
+to the new one.
+```
+
 <br></li>
+
 <li> <a href='#function-increase_capacity'><code>
 increase_capacity(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Increases the capacity of the vector and copies elements
-    to the new vector.
+```
+Increases the capacity of the vector and copies elements
+to the new vector.
+```
+
 <br></li>
+
 <li> <a href='#function-decrease_capacity'><code>
 decrease_capacity(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Decreases the capacity of the vector and copies elements
-    to the new vector.
+```
+Decreases the capacity of the vector and copies elements
+to the new vector.
+```
+
 <br></li>
+
 <li> <a href='#function-erase'><code>
 erase(self, i: int) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Removes the element at the specified index from the vector.
+```
+Removes the element at the specified index from the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-append'><code>
 append(self, x: Any) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Appends an element to the end of the vector.
+```
+Appends an element to the end of the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-insert'><code>
 insert(self, x: Any, i: int) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Inserts an element at the specified index in the vector.
+```
+Inserts an element at the specified index in the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-pop'><code>
 pop(self) -> Any
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Pops the last element from the vector.
+```
+Pops the last element from the vector.
+```
+
 <br></li>
+
 <li> <a href='#function-extend'><code>
 extend(self, elements: Sized and Iterable) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Appends to the vector all elements provided in `elements`.
+```
+Appends to the vector all elements provided in `elements`.
+```
+
 <br></li>
+
 <li> <a href='#function-__iter__'><code>
 __iter__(self) -> Generator
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Iterates over all elements in the vector.
+```
+Iterates over all elements in the vector.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Creates an instance of vector.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -168,7 +226,8 @@ Creates an instance of vector.
 <strong>NotImplementedError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the specified `capacity` is less than `size` or if invalid `capacity` or `size` values are provided. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__len__">
@@ -179,14 +238,14 @@ Creates an instance of vector.
 <em>Returns</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;------- int The number of elements in the vector. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__contains__">
 <strong>Function</strong>
 <code>__contains__</code></h1>
 Checks if a given element is present in the vector.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -197,14 +256,14 @@ Checks if a given element is present in the vector.
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;True if the element is found, False otherwise. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__setitem__">
 <strong>Function</strong>
 <code>__setitem__</code></h1>
 Sets the element at the specified index in the vector.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -220,14 +279,14 @@ Sets the element at the specified index in the vector.
 <strong>IndexError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the index is out of range. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__getitem__">
 <strong>Function</strong>
 <code>__getitem__</code></h1>
 Retrieves the element at the specified index from the vector.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -241,14 +300,14 @@ Retrieves the element at the specified index from the vector.
 <strong>IndexError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the index is out of range. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__delitem__">
 <strong>Function</strong>
 <code>__delitem__</code></h1>
 Deletes the element at the specified index from the vector.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -259,7 +318,8 @@ Deletes the element at the specified index from the vector.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-copy_to_new_vector">
@@ -268,12 +328,12 @@ Deletes the element at the specified index from the vector.
 Change the size of the vector and copies elements from the current
 vector to the new one.
 
-
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-increase_capacity">
@@ -282,12 +342,12 @@ vector to the new one.
 Increases the capacity of the vector and copies elements
 to the new vector.
 
-
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-decrease_capacity">
@@ -296,12 +356,12 @@ to the new vector.
 Decreases the capacity of the vector and copies elements
 to the new vector.
 
-
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-erase">
@@ -311,7 +371,6 @@ Removes the element at the specified index from the vector.
 
 If the size of the vector becomes less than or equal to one-fourth
 of its capacity after removal, the capacity is decreased.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -325,7 +384,8 @@ of its capacity after removal, the capacity is decreased.
 <strong>IndexError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the index is out of range. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-append">
@@ -336,7 +396,6 @@ Appends an element to the end of the vector.
 If the size of the vector becomes equal to its capacity
 after appending, the capacity is increased.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>x</strong>: <em>Any</em> <br>
@@ -346,7 +405,8 @@ after appending, the capacity is increased.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-insert">
@@ -356,7 +416,6 @@ Inserts an element at the specified index in the vector.
 
 If the size of the vector becomes equal to its capacity
 after insertion, the capacity is increased.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -372,7 +431,8 @@ after insertion, the capacity is increased.
 <strong>IndexError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the index is out of range. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-pop">
@@ -380,19 +440,18 @@ after insertion, the capacity is increased.
 <code>pop</code></h1>
 Pops the last element in the vector.
 
-
 <h2>Returns</h2>
 <em>Any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The popped element. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-extend">
 <strong>Function</strong>
 <code>extend</code></h1>
 Appends all provided elements.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -403,7 +462,8 @@ Appends all provided elements.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__iter__">
@@ -411,9 +471,8 @@ Appends all provided elements.
 <code>__iter__</code></h1>
 Iterates over all vector's elements.
 
-
 <h2>Returns</h2>
 <em>Generator</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________

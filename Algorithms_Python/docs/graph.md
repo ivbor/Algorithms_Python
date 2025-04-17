@@ -29,7 +29,6 @@ methods to manipulate and analyze the graph properties.
 Space complexity of all methods where time complexity specified is O(V)
 because graph is stored as list of vertices.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>vertices</strong>: <em>VerticesList</em> <br>
@@ -46,174 +45,262 @@ __init__(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Initialize the graph.
+```
+Initialize the graph.
+```
+
 <br></li>
+
 <li> <a href='#function-all_vertices'><code>
 all_vertices(self) -> list[str]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Method showing all vertices by data they contain.
+```
+Method showing all vertices by data they contain.
+```
+
 <br></li>
+
 <li> <a href='#function-add_vertex'><code>
 add_vertex(self, *args, **kwargs) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Adds vertex (node) to the graph.
+```
+Adds vertex (node) to the graph.
+```
+
 <br></li>
+
 <li> <a href='#function-remove_vertex'><code>
 remove_vertex(self, **kwargs) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Method removing vertex by data or index provided in kwargs.
+```
+Method removing vertex by data or index provided in kwargs.
+```
+
 <br></li>
+
 <li> <a href='#function-add_edge'><code>
 add_edge(self, u: int, v: int, *args, **kwargs) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Add edge between from the vertex with index u to the vertex with
-    index v.
+```
+Add edge between from the vertex with index u to the vertex with
+index v.
+```
+
 <br></li>
+
 <li> <a href='#function-remove_edge'><code>
 remove_edge(self, u: int, v: int) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Remove edge from the vertex with index u to the vertex with index v.
+```
+Remove edge from the vertex with index u to the vertex with index v.
+```
+
 <br></li>
+
 <li> <a href='#function-bfs'><code>
 bfs(self, start: int, target: int) -> list[int]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Breadth-first search implementation.
-    Returns the path from the start to the target.
+```
+Breadth-first search implementation.
+Returns the path from the start to the target.
+```
+
 <br></li>
+
 <li> <a href='#function-to_adjacency_matrix'><code>
 to_adjacency_matrix(self) -> list[list[int]]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Returns an adjacency matrix of the graph.
+```
+Returns an adjacency matrix of the graph.
+```
+
 <br></li>
+
 <li> <a href='#function-calculate_element'><code>
 calculate_element(self, vertex: int, neighbor: int) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Calculates an element with coordinates (vertex, neighbor) of
-    adjacency matrix.
+```
+Calculates an element with coordinates (vertex, neighbor) of
+adjacency matrix.
+```
+
 <br></li>
+
 <li> <a href='#function-is_cyclic'><code>
 is_cyclic(self) -> bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Method discovering whether the graph contains cycles.
+```
+Method discovering whether the graph contains cycles.
+```
+
 <br></li>
+
 <li> <a href='#function-topological_sort'><code>
 topological_sort(self) -> list[int]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Perform a topological sort of the graph
-    and return a list of vertices in topologically sorted order.
+```
+Perform a topological sort of the graph
+and return a list of vertices in topologically sorted order.
+```
+
 <br></li>
+
 <li> <a href='#function-tarjan_scc'><code>
 tarjan_scc(self) -> list[list[int]]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Find and return all strongly connected components in the graph
-    using Tarjan's algorithm.
+```
+Find and return all strongly connected components in the graph
+using Tarjan's algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-reverse_graph'><code>
 reverse_graph(self) -> 'Graph'
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Reverses the direction of all edges in the graph.
+```
+Reverses the direction of all edges in the graph.
+```
+
 <br></li>
+
 <li> <a href='#function-dfs_util'><code>
 dfs_util(self, reversed_graph: 'Graph', vertex: int,
    visited: set[int], scc: list[list[int]]) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    A utility function for DFS traversal that tracks the strongly
-    connected component.
+```
+A utility function for DFS traversal that tracks the strongly
+connected component.
+```
+
 <br></li>
+
 <li> <a href='#function-kosaraju_scc'><code>
 kosaraju_scc(self) -> list[list[int]]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Find and return all strongly connected components in the graph
-    using Kosaraju's algorithm.
+```
+Find and return all strongly connected components in the graph
+using Kosaraju's algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-dijkstra'><code>
 dijkstra(self, start: int) -> tuple[list[float], dict[int, int]]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    A method to calculate distances from the vertex with index start to
-    all other vertices and shortest paths using provided dictionary
-    using Dijkstra's algorithm.
+```
+A method to calculate distances from the vertex with index start to
+all other vertices and shortest paths using provided dictionary
+using Dijkstra's algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-bellman_ford'><code>
 bellman_ford(self, start: int) -> tuple[list[float], dict[int, list[int]]]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    A method to calculate distances from the vertex with index start to
-    all other vertices and shortest paths using provided dictionary
-    using Bellman-Ford algorithm.
+```
+A method to calculate distances from the vertex with index start to
+all other vertices and shortest paths using provided dictionary
+using Bellman-Ford algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-dinics_algorithm'><code>
 dinics_algorithm(self, source: int, sink: int) -> int:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Dinic's algorithm to find the maximum flow
-    from a source to a sink in the graph.
+```
+Dinic's algorithm to find the maximum flow
+from a source to a sink in the graph.
+```
+
 <br></li>
+
 <li> <a href='#function-goldberg_tarjan'><code>
 goldberg_tarjan(self, source: int, sink: int) -> int:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Method implementing the Goldberg-Tarjan's algorithm
-    to find the maximum flow from a source to a sink in a flow network.
+```
+Method implementing the Goldberg-Tarjan's algorithm
+to find the maximum flow from a source to a sink in a flow network.
+```
+
 <br></li>
+
 <li> <a href='#function-color_vertices'><code>
 color_vertices(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Color the vertices of the graph using a greedy coloring algorithm.
+```
+Color the vertices of the graph using a greedy coloring algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-all_edges'><code>
 all_edges(self) -> list[dict[str, Any]]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Return a list of all edges (in dict form) in the graph.
+```
+Return a list of all edges (in dict form) in the graph.
+```
+
 <br></li>
+
 <li> <a href='#function-color_edges'><code>
 color_edges(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Assign colors to edges ensuring no two adjacent edges have
-    the same color.
+```
+Assign colors to edges ensuring no two adjacent edges have
+the same color.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -221,12 +308,12 @@ color_edges(self) -> int
 <code>__init__</code></h1>
 Initialize a new Graph object.
 
-
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-all_vertices">
@@ -237,7 +324,8 @@ Initialize a new Graph object.
 <em></em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Returns ------- list[str] A list containing string representations of each vertex in the graph. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-add_vertex">
@@ -246,7 +334,6 @@ Initialize a new Graph object.
 Adds a vertex to the graph,
 automatically handling the indexing and connections
 based on provided arguments.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -259,14 +346,14 @@ based on provided arguments.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-remove_vertex">
 <strong>Function</strong>
 <code>remove_vertex</code></h1>
 Removes a vertex from the graph based on provided index or data.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -279,7 +366,8 @@ kwargs['data']: Any Data inside the vertex to remove. <br></li>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-add_edge">
@@ -291,7 +379,6 @@ optionally including properties listed below.
 DO NOT USE args FOR PASSING THESE PROPERTIES!
 Args are passed just to make potential future changes
 (additional functionality) easier.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -310,14 +397,14 @@ Args are passed just to make potential future changes
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-remove_edge">
 <strong>Function</strong>
 <code>remove_edge</code></h1>
 Removes an edge from the graph.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -330,7 +417,8 @@ Removes an edge from the graph.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-bfs">
@@ -343,7 +431,6 @@ returning the path.
 This function utilizes BFS.
 Time complexity: O(V + E)
 Space complexity: O(V)
-
 
 <h2>Parameters</h2>
 <ul>
@@ -359,7 +446,8 @@ Space complexity: O(V)
 <strong>IndexError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If no path exists between the start and target vertices. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-to_adjacency_matrix">
@@ -367,12 +455,12 @@ Space complexity: O(V)
 <code>to_adjacency_matrix</code></h1>
 Finds an adjacency matrix of the graph.
 
-
 <h2>Returns</h2>
 <em>list[list[int]]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The adjacency matrix. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-calculate_element">
@@ -380,7 +468,6 @@ Finds an adjacency matrix of the graph.
 <code>calculate_element</code></h1>
 Calculates an element with coordinates (vertex, neighbor) of the
 adjacency matrix.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -393,7 +480,8 @@ adjacency matrix.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The element of the adjacency matrix with coordinates (vertex, neighbor). <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-is_cyclic">
@@ -404,12 +492,12 @@ Method discovering whether the graph contains cycles.
 This function utilizes DFS.
 Time complexity: O(V + E)
 
-
 <h2>Returns</h2>
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Whether the graph contains cycles. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-topological_sort">
@@ -421,7 +509,6 @@ returning an ordered list of vertex indices.
 This function utilizes DFS.
 Time complexity: O(V + E)
 
-
 <h2>Returns</h2>
 <em>list[int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A list of vertex indices in topologically sorted order.   <br>
@@ -429,7 +516,8 @@ Time complexity: O(V + E)
 <strong>RecursionError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If the graph contains cycles, making topological sort impossible. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-tarjan_scc">
@@ -441,12 +529,12 @@ using Tarjan's algorithm.
 This function utilizes DFS.
 Time complexity: O(V + E)
 
-
 <h2>Returns</h2>
 <em>list[list[int]]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A list of lists, where each sublist represents a strongly connected component. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-reverse_graph">
@@ -456,12 +544,12 @@ Reverses the direction of all edges in the graph.
 
 Time complexity: O(V + E)
 
-
 <h2>Returns</h2>
 <em>Graph</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A new graph with reversed edges. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-dfs_util">
@@ -472,7 +560,6 @@ the strongly connected component.
 
 This function utilizes DFS.
 Time complexity: O(V + E)
-
 
 <h2>Parameters</h2>
 <ul>
@@ -487,7 +574,8 @@ Time complexity: O(V + E)
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-kosaraju_scc">
@@ -498,12 +586,12 @@ using Kosaraju's algorithm.
 
 Time complexity: O(V + E)
 
-
 <h2>Returns</h2>
 <em>list[list[int]]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A list of lists, where each inner list contains the indices of nodes that form a strongly connected component. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-dijkstra">
@@ -516,11 +604,10 @@ using Dijkstra's algorithm.
 Time complexity: O((V + E) * log V)
 
 Time complexity comes from the following facts:
-    - while acts as for cycle going through all vertices making
-    while-for section O(V + E);
-    - additional heappush operation within while-for performs in
-    log V time.
-
+\- while acts as for cycle going through all vertices making
+while-for section O(V + E);
+\- additional heappush operation within while-for performs in
+log V time.
 
 <h2>Parameters</h2>
 <ul>
@@ -531,7 +618,8 @@ Time complexity comes from the following facts:
 <em>tuple[list[float], dict[int, int]]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Tuple with list and dict inside. In the list to each index, being vertex's index, corresponds the distance between it and start vertex. In the dict to vertices' indexes correspond the closest vertices. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-bellman_ford">
@@ -543,7 +631,6 @@ using Bellman-Ford algorithm.
 
 Time complexity: O(V * E)
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>start</strong>: <em>int</em> <br>
@@ -553,7 +640,8 @@ Time complexity: O(V * E)
 <em>tuple[list[float], dict[int, list[int]]]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Tuple with list and dict inside. In the list to each index, being vertex's index, corresponds the distance between it and start vertex. In the dict to vertices' indexes correspond the shortest paths between these vertices and the starting vertex, both included. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-dinics_algorithm">
@@ -569,8 +657,7 @@ Then, it attempts to find blocking flows in this level graph
 using DFS until no more augmenting paths are found
 in the level graph.
 
-Time complexity: O(V * E ** 2)
-
+Time complexity: O(V * E \*\* 2)
 
 <h2>Parameters</h2>
 <ul>
@@ -583,7 +670,8 @@ Time complexity: O(V * E ** 2)
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The maximum flow from the source to the sink. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-goldberg_tarjan">
@@ -605,8 +693,7 @@ If no flow can be pushed, the function relabels the vertex
 (increases its height) to create new allowable paths
 in future iterations.
 
-Time complexity: O(E * V ** 2)
-
+Time complexity: O(E * V \*\* 2)
 
 <h2>Parameters</h2>
 <ul>
@@ -619,7 +706,8 @@ Time complexity: O(E * V ** 2)
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The maximum flow value from the source to the sink in the network. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-color_vertices">
@@ -627,12 +715,12 @@ Time complexity: O(E * V ** 2)
 <code>color_vertices</code></h1>
 Color the vertices of the graph using a greedy coloring algorithm.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Chromatic number of the graph. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-all_edges">
@@ -640,12 +728,12 @@ Color the vertices of the graph using a greedy coloring algorithm.
 <code>all_edges</code></h1>
 Return a list of all edges in the graph.
 
-
 <h2>Returns</h2>
 <em>list[dict[str, Any]]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;List containing edges in the form of the dict where key is edge's attribute and the value is the value of that attribute. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-color_edges">
@@ -654,9 +742,8 @@ Return a list of all edges in the graph.
 Assign colors to edges ensuring no two adjacent edges have
 the same color.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Chromatic number of the graph but for edges. <br>
 
----
+______________________________________________________________________

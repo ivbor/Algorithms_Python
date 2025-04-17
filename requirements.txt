@@ -4,8 +4,10 @@ interrogate
 bandit
 pytest
 bitarray
+flake8
 mmh3
 coverage
 psutil
 mock
+mdformat
 setuptools>=70.0.0 # not directly required, pinned by Snyk to avoid a vulnerability

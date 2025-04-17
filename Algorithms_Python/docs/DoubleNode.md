@@ -7,9 +7,13 @@ prev(obj: object with defined prev() method) -> Any
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Retrieve the previous object connected to the given DoubleNode object or
-    return None if there is no previous object.
+```
+Retrieve the previous object connected to the given DoubleNode object or
+return None if there is no previous object.
+```
+
 <br></li>
+
 </ul>
 
 <h2>Classes</h2>
@@ -33,7 +37,6 @@ Works as analog for built-in function next().
 This function retrieves the previous node connected
 to the given DoubleNode object or None if there is no previous node.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>obj</strong>: <em>object with defined prev() method</em> <br>
@@ -43,7 +46,8 @@ to the given DoubleNode object or None if there is no previous node.
 <em>Any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The previous object or None if no previous object exists. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-DoubleNode">
@@ -55,7 +59,6 @@ The DoubleNode class represents a node in a two-way linked list.
 It has the same functionality as a regular Node, but it can also
 access the previous node stored into the added attribute
 using the prev() method.
-
 
 <h2>Methods</h2>
 <ul>
@@ -69,8 +72,8 @@ prev(self)
 </code></a> <br> </li>
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -78,7 +81,6 @@ prev(self)
 <code>__init__</code></h1>
 Initialize a DoubleNode object with optional data,
 previous node, and next node.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -94,7 +96,8 @@ next_node: DoubleNode or None, optional The next node in the linked list. Defaul
 <strong>TypeError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If the provided prev_node or next_node is of the wrong type. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-prev_node">
@@ -102,19 +105,18 @@ next_node: DoubleNode or None, optional The next node in the linked list. Defaul
 <code>prev_node</code></h1>
 Get the previous node of the DoubleNode.
 
-
 <h2>Returns</h2>
 <em>DoubleNode or None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The previous DoubleNode object or None if no previous node exists. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-prev_node">
 <strong>Function</strong>
 <code>prev_node</code></h1>
 Set the previous node of the DoubleNode.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -125,7 +127,8 @@ Set the previous node of the DoubleNode.
 <strong>TypeError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If the provided prev_node is of the wrong type. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-prev">
@@ -135,7 +138,6 @@ This method is defined for providing the same access option
 for the previous node as for the next node
 (to make possible the same call as for built-in function)
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>prev_node</strong>: <em>DoubleNode or None</em> <br>
@@ -145,4 +147,4 @@ for the previous node as for the next node
 <strong>TypeError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If the provided prev_node is of the wrong type. <br>
 
----
+______________________________________________________________________

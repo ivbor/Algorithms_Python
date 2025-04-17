@@ -23,7 +23,6 @@ SegmentTreeOptimized
 <code>SegmentTree</code></h1>
 A class representing a segment tree.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>n</strong>: <em>int</em> <br>
@@ -40,24 +39,36 @@ __init__(self, arr: list) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Initializes a new instance of the `SegmentTree` class with
-    the given array.
+```
+Initializes a new instance of the `SegmentTree` class with
+the given array.
+```
+
 <br></li>
+
 <li> <a href='#function-build_tree'><code>
 build_tree(self, current_index: int, left: int, right: int) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Builds the segment tree using a recursive function.
+```
+Builds the segment tree using a recursive function.
+```
+
 <br></li>
+
 <li> <a href='#function-query'><code>
 query(self, action: Callable, query_left: int, query_right: int) -> float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Performs a query on the segment tree for the specified range
-    (including query_left and query_right indexes) and action.
+```
+Performs a query on the segment tree for the specified range
+(including query_left and query_right indexes) and action.
+```
+
 <br></li>
+
 <li> <a href='#function-_query'><code>
 _query(self, current_index: int, segment_left: int,
   segment_right: int, action: Callable, query_left: int,
@@ -65,28 +76,40 @@ _query(self, current_index: int, segment_left: int,
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Recursively performs a query on the segment tree.
+```
+Recursively performs a query on the segment tree.
+```
+
 <br></li>
+
 <li> <a href='#function-update'><code>
 update(self, index: int, new_value: float) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Updates the value of a specified index in the segment tree.
+```
+Updates the value of a specified index in the segment tree.
+```
+
 <br></li>
+
 <li> <a href='#function-_update'><code>
 _update(self, current_index: int, segment_left: int, segment_right: int,
   index: int, new_value: float) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Recursively updates the value of a specified index in the segment
-    tree.
+```
+Recursively updates the value of a specified index in the segment
+tree.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -94,7 +117,6 @@ _update(self, current_index: int, segment_left: int, segment_right: int,
 <code>__init__</code></h1>
 Initializes a new instance of the `SegmentTree` class with the given
 array.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -105,14 +127,14 @@ array.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-build_tree">
 <strong>Function</strong>
 <code>build_tree</code></h1>
 Builds the segment tree using a recursive function.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -127,7 +149,8 @@ Builds the segment tree using a recursive function.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-query">
@@ -135,7 +158,6 @@ Builds the segment tree using a recursive function.
 <code>query</code></h1>
 Performs a query on the segment tree for the specified range and
 action.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -153,14 +175,14 @@ action.
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If query is called to perform operation not among defined. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_query">
 <strong>Function</strong>
 <code>_query</code></h1>
 Recursively performs a query on the segment tree.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -181,14 +203,14 @@ Recursively performs a query on the segment tree.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The result of the query. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-update">
 <strong>Function</strong>
 <code>update</code></h1>
 Updates the value of a specified index in the segment tree.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -201,7 +223,8 @@ Updates the value of a specified index in the segment tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_update">
@@ -209,7 +232,6 @@ Updates the value of a specified index in the segment tree.
 <code>_update</code></h1>
 Recursively updates the value of a specified index in the segment
 tree.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -228,14 +250,14 @@ tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-SegmentTreeOptimized">
 <strong>Class</strong>
 <code>SegmentTreeOptimized</code></h1>
 An optimized version of the segment tree class.
-
 
 <h2>Attributes</h2>
 <ul>
@@ -259,34 +281,50 @@ __init__(self, arr) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Initializes a new instance of the `SegmentTreeOptimized` class with
-    the given array.
+```
+Initializes a new instance of the `SegmentTreeOptimized` class with
+the given array.
+```
+
 <br></li>
+
 <li> <a href='#function-determine_queries'><code>
 determine_queries(self, left_index: int, right_index: int) ->
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    tuple[Callable, Callable] | tuple[Callable, float] |
-    tuple[float, float]
-    Determines the queries for the left and right indices.
+```
+tuple[Callable, Callable] | tuple[Callable, float] |
+tuple[float, float]
+Determines the queries for the left and right indices.
+```
+
 <br></li>
+
 <li> <a href='#function-build_tree'><code>
 build_tree(self, arr: list[float], current_index: int,
  left: int, right: int, action: Callable | None = None) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Builds the segment tree using a recursive function.
+```
+Builds the segment tree using a recursive function.
+```
+
 <br></li>
+
 <li> <a href='#function-query'><code>
 query(self, action: Callable, query_left: int, query_right: int) -> float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Performs a query on the segment tree for the specified range
-    (including query_left and query_right indexes) and action.
+```
+Performs a query on the segment tree for the specified range
+(including query_left and query_right indexes) and action.
+```
+
 <br></li>
+
 <li> <a href='#function-_query'><code>
 _query(self, current_index: int, segment_left: int,
  segment_right: int, action: Callable, query_left: int,
@@ -294,24 +332,36 @@ _query(self, current_index: int, segment_left: int,
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Recursively performs a query on the segment tree.
+```
+Recursively performs a query on the segment tree.
+```
+
 <br></li>
+
 <li> <a href='#function-update'><code>
 update(self, index: int, new_value: float) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Updates the value of a specified index in the segment tree.
+```
+Updates the value of a specified index in the segment tree.
+```
+
 <br></li>
+
 <li> <a href='#function-_update'><code>
 _update(self, current_index: int, segment_left: int,
  segment_right: int, index: int, new_value: float) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Recursively updates the value of a specified index in the segment
-    tree.
+```
+Recursively updates the value of a specified index in the segment
+tree.
+```
+
 <br></li>
+
 <li> <a href='#function-new_action'><code>
 new_action(self, func: Callable, neutral: float)
     Adds a new action to the segment tree and updates the
@@ -319,8 +369,8 @@ new_action(self, func: Callable, neutral: float)
 </code></a> <br> </li>
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -328,7 +378,6 @@ new_action(self, func: Callable, neutral: float)
 <code>__init__</code></h1>
 Initializes a new instance of the `SegmentTreeOptimized` class with
 the given array.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -339,7 +388,8 @@ the given array.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-determine_queries">
@@ -348,7 +398,6 @@ the given array.
 Determines the queries for the left and right indices.
 Its purpose is to give the same looking calls for the queries
 with only one element and with more than one element.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -361,14 +410,14 @@ with only one element and with more than one element.
 <em>left_query: Callable</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A lambda function representing the query for the left index.  right_query: Callable A lambda function representing the query for the right index. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-build_tree">
 <strong>Function</strong>
 <code>build_tree</code></h1>
 Builds the segment tree using a recursive function.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -387,7 +436,8 @@ Builds the segment tree using a recursive function.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-query">
@@ -395,7 +445,6 @@ Builds the segment tree using a recursive function.
 <code>query</code></h1>
 Performs a query on the segment tree for the specified range and
 action.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -410,14 +459,14 @@ action.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The result of the query. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_query">
 <strong>Function</strong>
 <code>_query</code></h1>
 Recursively performs a query on the segment tree.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -438,14 +487,14 @@ Recursively performs a query on the segment tree.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The result of the query. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-update">
 <strong>Function</strong>
 <code>update</code></h1>
 Updates the value of a specified index in the segment tree.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -458,7 +507,8 @@ Updates the value of a specified index in the segment tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_update">
@@ -466,7 +516,6 @@ Updates the value of a specified index in the segment tree.
 <code>_update</code></h1>
 Recursively updates the value of a specified index in the
 segment tree.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -485,7 +534,8 @@ segment tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-new_action">
@@ -493,7 +543,6 @@ segment tree.
 <code>new_action</code></h1>
 Adds a new action to the segment tree and updates the tree
 accordingly.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -506,4 +555,4 @@ accordingly.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________

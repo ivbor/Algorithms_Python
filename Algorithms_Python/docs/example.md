@@ -1,13 +1,23 @@
 <!--I HATE HTML BUT MARKDOWN CAN DO ALMOST NOTHING WITHOUT IT-->
+
 <!--Hence, here is what's what-->
+
 <!--h1 equals == in markdown-->
+
 <!--h2 equals -- in markdown-->
+
 <!--br breaks the line-->
+
 <!--ul starts unordered list-->
+
 <!--li is an entry in unordered list-->
+
 <!--&nbsp is just a usual space-->
+
 <!--strong is for bold-->
+
 <!--em for italic-->
+
 <h1>Bloom Filter Module</h1>
 This module provides an implementation of a Bloom filter, a probabilistic
 data structure used to check whether an item is a member of a set with a
@@ -45,7 +55,8 @@ Implements a Bloom filter data structure for efficient membership testing.
 <br></li>
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id='function-rot'>
@@ -65,7 +76,8 @@ the value in the list.<br></li>
 &nbsp;&nbsp;&nbsp;&nbsp;Path from the start vertex to the target, including 
 both.
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always;"></div>
 <br>
 <h1 id='class-Graph_util'>
@@ -84,17 +96,19 @@ Class storing utility methods for the main graph class.
 <li> <code>
 _find_arg(self, default: Any, arg_dict: dict[int, str], *args, **kwargs) -> Any
 
-</code> <br> 
+</code> <br>
 <a href='#function-_find_arg' style='color: blue'>[to the method]</a> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Method finding index of the vertex to remove among 
+Method finding index of the vertex to remove among
 kwargs by data or index. <br> </li>
+
 <li> <code>
 _find_index(self, **kwargs) -> int | None
 
-</code> <br> 
+</code> <br>
 <a href='#function-_find_index' style='color: blue'>[to the method]</a> <br>
-&nbsp;&nbsp;&nbsp;&nbsp;Method finding index of the vertex to remove among 
+Method finding index of the vertex to remove among
 kwargs by data or index. <br> </li>
+
 <li> <code>
 tarjan_dfs(self, vertex: int, index: list[int], stack: list[int], low_link: 
 list[int], on_stack: list[bool], scc: list[list[int]]) -> None
@@ -104,7 +118,8 @@ list[int], on_stack: list[bool], scc: list[list[int]]) -> None
 </li>
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always;"></div>
 <br>
 <h1 id='function-_find_arg'>
@@ -125,7 +140,8 @@ argument position in args, and value - in kwargs. <br> </li>
 &nbsp;&nbsp;&nbsp;&nbsp;The required argument found within args or kwargs or 
 the default value if the argument was not found.
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always;"></div>
 <br>
 <h1 id='function-_find_index'>
@@ -148,4 +164,4 @@ removal.
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If data or index were not found among kwargs.
 
----
+______________________________________________________________________

@@ -8,27 +8,40 @@ _lower_bound(array: list[int], left_edge: int, right_edge: int,
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    This is lower bound search helper.
+```
+This is lower bound search helper.
+```
+
 <br></li>
+
 <li> <a href='#function-lower_bound'><code>
 lower_bound(array: list[int], value_to_search: int) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Determines the index of the first encounter of the whole-numbered value
-    in a sorted array.
+```
+Determines the index of the first encounter of the whole-numbered value
+in a sorted array.
+```
+
 <br></li>
+
 <li> <a href='#function-upper_bound'><code>
 upper_bound(array: list[int], value_to_search: int) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Determines the index of the last encounter of the whole-numbered value
-    in a sorted array.
+```
+Determines the index of the last encounter of the whole-numbered value
+in a sorted array.
+```
+
 <br></li>
+
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_lower_bound">
@@ -40,7 +53,6 @@ Lower bound search works on the cut,
 so edges of the cut inside the array have to be provided.
 Array has to be sorted already, time and complexity equal
 to the binary search with recursion.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -57,7 +69,8 @@ to the binary search with recursion.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;index there the lower bound with required value is located <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-lower_bound">
@@ -73,7 +86,6 @@ calculation complexity.
 Array where is the value to be searched for has to be already sorted.
 Function assumes by-default the presence of the value to be searched.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list[int]</em> <br>
@@ -85,7 +97,8 @@ Function assumes by-default the presence of the value to be searched.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;index of the first encounter of the searched value <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-upper_bound">
@@ -99,7 +112,6 @@ searches for the last encounter. Generally, it is done via
 lower_bound of the next (+1) whole value and subtraction 1 from the
 returned index.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list[int]</em> <br>
@@ -111,4 +123,4 @@ returned index.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;index of the last encounter of the searched value <br>
 
----
+______________________________________________________________________

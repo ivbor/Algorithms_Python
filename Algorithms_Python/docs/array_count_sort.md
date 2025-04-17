@@ -1,5 +1,5 @@
 <h1>Array Counting Sort Module</h1>
-  
+
 <h2>Functions</h2>
 <ul>
 <li> <a href='#function-array_count_sort'><code>
@@ -7,11 +7,16 @@ array_count_sort(arr: list[list[int]], key: int = 0) -> list[list[int]]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sort a 2-dimensional array of integers based on a key index.
+```
+Sort a 2-dimensional array of integers based on a key index.
+```
+
 <br></li>
+
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-array_count_sort">
@@ -27,7 +32,6 @@ Time to work: O(number of rows in the array) or
 O(difference between the biggest and the lowest value
 in the key index) depending on what is more.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list[list[int]]</em> <br>
@@ -39,4 +43,4 @@ in the key index) depending on what is more.
 <em>list[list[int]]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Sorted array <br>
 
----
+______________________________________________________________________

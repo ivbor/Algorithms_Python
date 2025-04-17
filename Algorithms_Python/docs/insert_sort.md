@@ -7,27 +7,40 @@ insert_sort(array: list[float]) -> list[float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sorts a list of elements using the Insertion Sort algorithm.
+```
+Sorts a list of elements using the Insertion Sort algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-bin_search_fl'><code>
 bin_search_fl(array: list[float], value: float, start: int, end: int) -> int:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    A binary search in the array slice consisting of floats.
+```
+A binary search in the array slice consisting of floats.
+```
+
 <br></li>
+
 <li> <a href='#function-insert_sort_opt'><code>
 insert_sort_opt(array: list[float]) -> list[float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sorts a list of elements using the optimized Insertion Sort algorithm.
-    This version uses binary search to find the correct position for each
-    element, reducing the number of comparisons and improving efficiency.
+```
+Sorts a list of elements using the optimized Insertion Sort algorithm.
+This version uses binary search to find the correct position for each
+element, reducing the number of comparisons and improving efficiency.
+```
+
 <br></li>
+
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-insert_sort">
@@ -44,7 +57,6 @@ This process continues until the entire list is sorted.
 Worst and average cases time complexity - O(n^2).
 Space complexity - O(1) as sorting is done in-place.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list</em> <br>
@@ -54,7 +66,8 @@ Space complexity - O(1) as sorting is done in-place.
 <em>list</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A list containing the elements of the input list in sorted order. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-bin_search_fl">
@@ -64,7 +77,6 @@ A binary search in the array slice consisting of floats.
 
 It searches for the place where to put the value
 while preserving an ascending order.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -81,7 +93,8 @@ while preserving an ascending order.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;An index pointing to the place where the value should land. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-insert_sort_opt">
@@ -94,7 +107,6 @@ Sorts a list of elements using the optimized Insertion Sort algorithm.
 This version uses binary search to find the correct position for each
 element, reducing the number of comparisons and improving efficiency.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list</em> <br>
@@ -104,4 +116,4 @@ element, reducing the number of comparisons and improving efficiency.
 <em>list</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A list containing the elements of the input list in sorted order. <br>
 
----
+______________________________________________________________________

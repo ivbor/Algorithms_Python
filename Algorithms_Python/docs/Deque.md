@@ -21,7 +21,6 @@ The Deque class represents a double-ended queue,
 which is a data structure that allows elements
 to be added or removed from both ends.
 
-
 <h2>Methods</h2>
 <ul>
 <li> <a href='#function-push_back'><code>
@@ -45,15 +44,14 @@ push_front(self, value)
 </code></a> <br> </li>
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-push_back">
 <strong>Function</strong>
 <code>push_back</code></h1>
 Add an element to the back (left) end of the deque.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -64,7 +62,8 @@ Add an element to the back (left) end of the deque.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-pop_front">
@@ -72,12 +71,12 @@ Add an element to the back (left) end of the deque.
 <code>pop_front</code></h1>
 Remove and return the element from the front (right) end of the deque.
 
-
 <h2>Returns</h2>
 <em>any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The element removed from the front of the deque. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-pop_back">
@@ -85,19 +84,18 @@ Remove and return the element from the front (right) end of the deque.
 <code>pop_back</code></h1>
 Remove and return the element from the back (left) end of the deque.
 
-
 <h2>Returns</h2>
 <em>any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The element removed from the back of the deque. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-push_front">
 <strong>Function</strong>
 <code>push_front</code></h1>
 Add an element to the front (right) end of the deque.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -108,4 +106,4 @@ Add an element to the front (right) end of the deque.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________

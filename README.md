@@ -69,7 +69,9 @@ Workflows are set using Github Actions with
 
 ## TODOs
 
-- enable html for docs through scripts for markdownlint
+- implement algorithms for strings
+- implement parser (maybe even interpreter)
+- implement a library for topology (geometry)
 
 ## Contact
 

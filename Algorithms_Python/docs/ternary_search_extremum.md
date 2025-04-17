@@ -12,7 +12,8 @@ tern_search_max(func, start, end, eps=1e-6)
 </code></a> <br> </li>
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-tern_search_min">
@@ -29,7 +30,6 @@ difference between the start and end positions.
 It determines the local minimum by comparing the function's values
 at two points within the search interval.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>func</strong>: <em>callable</em> <br>
@@ -45,7 +45,8 @@ at two points within the search interval.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The approximate x-coordinate of the minimum value of the function within the specified range. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-tern_search_max">
@@ -62,7 +63,6 @@ difference between the start and end positions.
 It determines the local minimum by comparing the function's values
 at two points within the search interval.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>func</strong>: <em>callable</em> <br>
@@ -78,4 +78,4 @@ at two points within the search interval.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The approximate x-coordinate of the maximum value of the function within the specified range. <br>
 
----
+______________________________________________________________________

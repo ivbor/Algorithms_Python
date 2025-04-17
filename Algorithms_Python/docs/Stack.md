@@ -22,7 +22,6 @@ The stack follows the Last-In-First-Out (LIFO) principle,
 where the last element added is the first one to be removed.
 This class provides methods to manipulate and query the stack.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>head</strong>: <em>DoubleNode or None</em> <br>
@@ -39,48 +38,72 @@ __init__(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Initializes an empty stack.
+```
+Initializes an empty stack.
+```
+
 <br></li>
+
 <li> <a href='#function-push'><code>
 push(self, value) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Adds a new element to the back of the stack.
+```
+Adds a new element to the back of the stack.
+```
+
 <br></li>
+
 <li> <a href='#function-pop'><code>
 pop(self) -> Any | None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Removes and returns the back element from the stack.
+```
+Removes and returns the back element from the stack.
+```
+
 <br></li>
+
 <li> <a href='#function-back'><code>
 back(self) -> Any | None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Retrieves the element at the back of the stack
-    without removing it.
+```
+Retrieves the element at the back of the stack
+without removing it.
+```
+
 <br></li>
+
 <li> <a href='#function-front'><code>
 front(self) -> Any | None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Retrieves the element at the top of the stack.
+```
+Retrieves the element at the top of the stack.
+```
+
 <br></li>
+
 <li> <a href='#function-__len__'><code>
 __len__(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Returns the number of elements currently in the stack.
+```
+Returns the number of elements currently in the stack.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -88,19 +111,18 @@ __len__(self) -> int
 <code>__init__</code></h1>
 Initializes an empty stack.
 
-
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-push">
 <strong>Function</strong>
 <code>push</code></h1>
 Adds a new element to the back of the stack.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -111,7 +133,8 @@ Adds a new element to the back of the stack.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-pop">
@@ -119,12 +142,12 @@ Adds a new element to the back of the stack.
 <code>pop</code></h1>
 Removes and returns the back element from the stack.
 
-
 <h2>Returns</h2>
 <em>Any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The removed element from the back of the stack. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-back">
@@ -133,12 +156,12 @@ Removes and returns the back element from the stack.
 Retrieves the element at the back of the stack
 without removing it.
 
-
 <h2>Returns</h2>
 <em>Any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The element at the back of the stack. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-front">
@@ -146,12 +169,12 @@ without removing it.
 <code>front</code></h1>
 Retrieves the element at the top of the stack.
 
-
 <h2>Returns</h2>
 <em>Any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The element at the top of the stack. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__len__">
@@ -162,4 +185,4 @@ Retrieves the element at the top of the stack.
 <em>Returns</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;------- int The number of elements in the stack. <br>
 
----
+______________________________________________________________________

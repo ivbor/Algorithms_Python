@@ -15,38 +15,55 @@ merge(array: list[float], part_one: list[float], part_two: list[float])
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Merge two sorted arrays into a single sorted array.
+```
+Merge two sorted arrays into a single sorted array.
+```
+
 <br></li>
+
 <li> <a href='#function-merge_sort'><code>
 merge_sort(array: list[float], opt: bool = True, batch_size: int = 3)
  -> list[float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sort a list of elements using the Merge Sort algorithm.
-    Optimised version (opt=True) calls Insertion Sort for small arrays.
+```
+Sort a list of elements using the Merge Sort algorithm.
+Optimised version (opt=True) calls Insertion Sort for small arrays.
+```
+
 <br></li>
+
 <li> <a href='#function-merge_sort_parallel'><code>
 merge_sort_parallel(array: list[float], batch_size=None, depth=0)
  -> list[float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sort a list of elements with multiprocessing using the Merge Sort
-    algorithm.
+```
+Sort a list of elements with multiprocessing using the Merge Sort
+algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-parallel_merge_sort'><code>
 parallel_merge_sort(arr: list[float], batch_size=None, depth=0)
  -> list[float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Function-helper for merge_sort_parallel which handles recursion
-    and multiprocessing.
+```
+Function-helper for merge_sort_parallel which handles recursion
+and multiprocessing.
+```
+
 <br></li>
+
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-merge">
@@ -58,7 +75,6 @@ This function merges two sorted arrays, `part_one` and `part_two`, into
 a single sorted array. This is a helper for the Merge Sort function.
 Both space and time complexities are O(n), where n - the number of
 elements inside two arrays combined.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -73,7 +89,8 @@ elements inside two arrays combined.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-merge_sort">
@@ -87,9 +104,8 @@ to sort a list of elements.
 The Merge Sort algorithm works by dividing the input list into
 two halves, recursively sorting each half, and then merging the
 two sorted halves into one sorted list.
-Time Complexity is O(n*log(n)), space complexity - O(n).
+Time Complexity is O(n\*log(n)), space complexity - O(n).
 Space is used for storing divided subarrays during sorting.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -104,7 +120,8 @@ Space is used for storing divided subarrays during sorting.
 <em>list[float]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A new list containing the elements of the input list in sorted order. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-merge_sort_parallel">
@@ -114,7 +131,6 @@ Parallel Merge Sort using dynamic ThreadPoolExecutor
 
 This function implements the Merge Sort algorithm in parallel
 to sort a list of elements.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -129,4 +145,4 @@ to sort a list of elements.
 <em>list[float]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A new list containing the elements of the input list in sorted order. <br>
 
----
+______________________________________________________________________

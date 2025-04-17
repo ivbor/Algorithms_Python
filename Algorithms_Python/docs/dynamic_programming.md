@@ -53,7 +53,6 @@ TravellingSalesmanProblem
 <code>DynamicProgrammingProblem</code></h1>
 Base class for dynamic programming problems.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>dp</strong>: <em>list[Unknown]</em> <br>
@@ -66,12 +65,16 @@ solve(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Subclasses must implement this method.
+```
+Subclasses must implement this method.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -79,12 +82,12 @@ solve(self) -> None
 <code>__init__</code></h1>
 Creates an instance of the DynamicProgrammingProblem class
 
-
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve">
@@ -92,12 +95,12 @@ Creates an instance of the DynamicProgrammingProblem class
 <code>solve</code></h1>
 Subclasses must implement this method to solve a specific problem.
 
-
 <h2>Raises</h2>
 <strong>NotImplementedError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised to indicate that this method should be overridden in subclasses. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-KnapsackProblem">
@@ -110,10 +113,9 @@ next way. You have a set of items, each with a weight and a value, and you
 have a knapsack with a maximum weight capacity. The goal is to determine
 the combination of items to include in the knapsack that maximizes the
 total value while not exceeding the weight capacity.
-Dynamic programming offers an option to solve this problem within O(n*w)
+Dynamic programming offers an option to solve this problem within O(n\*w)
 time where n - amount of items, w - knapsack capacity. Since this is
-well-known NP-hard problem, usual time to solve is O(2**n).
-
+well-known NP-hard problem, usual time to solve is O(2\*\*n).
 
 <h2>Attributes</h2>
 <ul>
@@ -131,12 +133,16 @@ solve(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Solves the Knapsack problem and returns the maximum value.
+```
+Solves the Knapsack problem and returns the maximum value.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -144,7 +150,6 @@ solve(self) -> int
 <code>__init__</code></h1>
 Creates an instance of the KnapsackProblem class
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>weights</strong>: <em>list[int]</em> <br>
@@ -158,7 +163,8 @@ Creates an instance of the KnapsackProblem class
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve">
@@ -166,12 +172,12 @@ Creates an instance of the KnapsackProblem class
 <code>solve</code></h1>
 Solves the Knapsack problem using dynamic programming.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The maximum value that can be obtained. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-LongestCommonSubsequence">
@@ -179,10 +185,9 @@ Solves the Knapsack problem using dynamic programming.
 <code>LongestCommonSubsequence</code></h1>
 Class for finding the Longest Common Subsequence (LCS) of two strings.
 
-This problem has a naive solution with time complexity O(2**n) where n is
+This problem has a naive solution with time complexity O(2\*\*n) where n is
 the length of the longest string. Dynamic programming offers solution
 with O(n^2) time complexity, where n and m are the length of strings.
-
 
 <h2>Attributes</h2>
 <ul>
@@ -198,19 +203,22 @@ solve(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Finds the LCS of the two input strings.
+```
+Finds the LCS of the two input strings.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Creates an instance of the LongestCommonSubsequence class
-
 
 <h2>Parameters</h2>
 <ul>
@@ -223,7 +231,8 @@ Creates an instance of the LongestCommonSubsequence class
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve">
@@ -231,12 +240,12 @@ Creates an instance of the LongestCommonSubsequence class
 <code>solve</code></h1>
 Finds the Longest Common Subsequence (LCS) of two strings.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The length of the LCS. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-DamerauLevensteinDistance">
@@ -252,7 +261,6 @@ These are insertion, deletion, substitution and transposition. It is
 important to note that transpositions are made only between adjacent
 characters.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>str1</strong>: <em>str</em> <br>
@@ -267,23 +275,26 @@ solve(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Calculates the Damerau-Levenshtein distance between the two input
-    strings.
+```
+Calculates the Damerau-Levenshtein distance between the two input
+strings.
+```
+
 <br></li>
+
 <li> <a href='#function-solve_optimized'><code>
 solve_optimized(self) -> int
 </code></a> <br> </li>
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Creates an instance of the DamerauLevensteinDistance class
-
 
 <h2>Parameters</h2>
 <ul>
@@ -296,7 +307,8 @@ Creates an instance of the DamerauLevensteinDistance class
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve">
@@ -305,12 +317,12 @@ Creates an instance of the DamerauLevensteinDistance class
 Calculates the Damerau-Levenshtein distance between the two input
 strings.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The Damerau-Levenshtein distance. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve_optimized">
@@ -322,12 +334,12 @@ O(m*n), where
 m - the length of the longest string,
 n - the length of the shortest string.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The Damerau-Levenshtein distance. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-LongestIncreasingSubsequence">
@@ -336,10 +348,9 @@ n - the length of the shortest string.
 Class for finding the length of the Longest Increasing Subsequence (LIS)
 in a list of numbers using dynamic programming.
 
-This problem has a naive solution with time complexity O(2**n) where n is
+This problem has a naive solution with time complexity O(2\*\*n) where n is
 the length of the longest string. Dynamic programming offers solution
 with O(n^2) time complexity, where n and m are the length of strings.
-
 
 <h2>Attributes</h2>
 <ul>
@@ -353,19 +364,22 @@ solve(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Finds the length of the Longest Increasing Subsequence (LIS).
+```
+Finds the length of the Longest Increasing Subsequence (LIS).
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Creates an instance of the LongestIncreasingSubsequence class
-
 
 <h2>Parameters</h2>
 <ul>
@@ -376,7 +390,8 @@ Creates an instance of the LongestIncreasingSubsequence class
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve">
@@ -385,12 +400,12 @@ Creates an instance of the LongestIncreasingSubsequence class
 Finds the length of the Longest Increasing Subsequence (LIS)
 in the list of numbers.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The length of the Longest Increasing Subsequence. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve_optimized">
@@ -400,12 +415,12 @@ Finds the length of the Longest Increasing Subsequence (LIS)
 in the list of numbers with time of work reduced from O(n^2) to
 O(n*logn) by using binary search.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The length of the Longest Increasing Subsequence. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-maxSubarraySum">
@@ -415,7 +430,6 @@ This class provides a solution to the Maximum Subarray Sum problem
 using Mo's algorithm and dynamic programming. It allows you to find
 the maximum sum of a subarray within a given array for multiple
 queries.
-
 
 <h2>Attributes</h2>
 <ul>
@@ -431,23 +445,31 @@ solve(self, arr: list[int]) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Solves the Maximum Subarray Sum problem for each query in the
-    sorted order of left endpoints and returns the maximum subarray
-    sum for each query using Mo's algorithm.
+```
+Solves the Maximum Subarray Sum problem for each query in the
+sorted order of left endpoints and returns the maximum subarray
+sum for each query using Mo's algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-solve_optimized'><code>
 solve_optimized(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Solves the Maximum Subarray Sum problem for each query in the
-    sorted order of left endpoints and returns the maximum subarray
-    sum for each query using dynamic programming.
+```
+Solves the Maximum Subarray Sum problem for each query in the
+sorted order of left endpoints and returns the maximum subarray
+sum for each query using dynamic programming.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -455,7 +477,6 @@ solve_optimized(self) -> int
 <code>__init__</code></h1>
 Initializes a new maxSubarraySum instance with the provided input
 array and a list of queries.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -468,7 +489,8 @@ array and a list of queries.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve_optimized">
@@ -478,12 +500,12 @@ Solves the Maximum Subarray Sum problem for each query in the sorted
 order of left endpoints using dynamic programming. Time complexity
 is O(Q), space complexity is O(array length).
 
-
 <h2>Returns</h2>
 <em>list[int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A list of maximum subarray sums for each query. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-solve">
@@ -500,9 +522,8 @@ The space complexity of this method is O(1),
 since it requires nothing, but 4 pointers and 2 variables for
 storing sums.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The maximum subarray sum among queries. <br>
 
----
+______________________________________________________________________

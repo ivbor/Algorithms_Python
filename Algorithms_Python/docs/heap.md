@@ -7,24 +7,36 @@ heap_sort(array: list[float]) -> list[float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sorts an array in ascending order using the heap sort algorithm.
-    Heap sort is an efficient comparison-based sorting algorithm that uses
-    a binary heap to perform the sorting.
+```
+Sorts an array in ascending order using the heap sort algorithm.
+Heap sort is an efficient comparison-based sorting algorithm that uses
+a binary heap to perform the sorting.
+```
+
 <br></li>
+
 <li> <a href='#function-sift_up'><code>
 sift_up(array: list[float], element_index: int, size: int) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Performs the sift-up operation to maintain the heap property.
+```
+Performs the sift-up operation to maintain the heap property.
+```
+
 <br></li>
+
 <li> <a href='#function-sift_down'><code>
 sift_down(array: list[float], element_index: int) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Performs the sift-down operation to maintain the heap property.
+```
+Performs the sift-down operation to maintain the heap property.
+```
+
 <br></li>
+
 </ul>
 
 <h2>Classes</h2>
@@ -48,7 +60,6 @@ This class extends the Vector class to represent a binary
 tree-based min-heap, where the minimum value is stored at the root,
 and each parent node contains elements smaller than its children.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>elements</strong>: <em>list or None, optional</em> <br>
@@ -66,68 +77,99 @@ __init__(self, elements: list[float] | None = None,
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Initialize the heap.
+```
+Initialize the heap.
+```
+
 <br></li>
+
 <li> <a href='#function-append'><code>
 append(self, x: float) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Append an element to the heap.
+```
+Append an element to the heap.
+```
+
 <br></li>
+
 <li> <a href='#function-get_children'><code>
 get_children(self, i: int) -> tuple(float, float) or float or None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Get the children of a node at the specified index.
+```
+Get the children of a node at the specified index.
+```
+
 <br></li>
+
 <li> <a href='#function-height'><code>
 height(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Calculate the height of the heap.
+```
+Calculate the height of the heap.
+```
+
 <br></li>
+
 <li> <a href='#function-insert'><code>
 insert(self, x: float) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Insert an element into the heap.
+```
+Insert an element into the heap.
+```
+
 <br></li>
+
 <li> <a href='#function-remove_min'><code>
 remove_min(self) -> float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Remove and return the minimum element from the heap.
+```
+Remove and return the minimum element from the heap.
+```
+
 <br></li>
+
 <li> <a href='#function-__repr__'><code>
 __repr__(self) -> str
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Return a string representation of the heap.
+```
+Return a string representation of the heap.
+```
+
 <br></li>
+
 <li> <a href='#function-erase'><code>
 erase(self) -> float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Alias for `remove_min`.
+```
+Alias for `remove_min`.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Initialize a new Heap instance.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -142,7 +184,8 @@ Initialize a new Heap instance.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-append">
@@ -151,7 +194,6 @@ Initialize a new Heap instance.
 Append an element to the heap.
 
 This method is an alias for `insert`.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -162,14 +204,14 @@ This method is an alias for `insert`.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-get_children">
 <strong>Function</strong>
 <code>get_children</code></h1>
 Get the children of a node at the specified index.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -180,7 +222,8 @@ Get the children of a node at the specified index.
 <em>tuple or float or None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A tuple containing the left and right children of the node if both exist, the left child if only the left child exists, or None if the node has no children. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-height">
@@ -188,12 +231,12 @@ Get the children of a node at the specified index.
 <code>height</code></h1>
 Calculate the height of the heap.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The height of the heap. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-insert">
@@ -204,7 +247,6 @@ Insert an element into the heap.
 If the size of the heap becomes equal to its capacity after
 insertion, the capacity is increased.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>x</strong>: <em>Any</em> <br>
@@ -214,7 +256,8 @@ insertion, the capacity is increased.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-remove_min">
@@ -225,7 +268,6 @@ Remove and return the minimum element from the heap.
 If the size of the heap becomes less than or equal to one-fourth
 of its capacity after removal, the capacity is decreased.
 
-
 <h2>Returns</h2>
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The minimum element in the heap.   <br>
@@ -233,7 +275,8 @@ of its capacity after removal, the capacity is decreased.
 <strong>IndexError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the heap is empty. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__repr__">
@@ -241,12 +284,12 @@ of its capacity after removal, the capacity is decreased.
 <code>__repr__</code></h1>
 Return a string representation of the heap.
 
-
 <h2>Returns</h2>
 <em>str</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A string representation of the heap in a tree-like format. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-erase">
@@ -254,19 +297,18 @@ Return a string representation of the heap.
 <code>erase</code></h1>
 Alias for `remove_min`.
 
-
 <h2>Returns</h2>
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The minimum element in the heap. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-sift_up">
 <strong>Function</strong>
 <code>sift_up</code></h1>
 Perform the sift-up operation to maintain heap property.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -279,14 +321,14 @@ Perform the sift-up operation to maintain heap property.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-sift_down">
 <strong>Function</strong>
 <code>sift_down</code></h1>
 Perform the sift-down operation to maintain heap property.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -301,7 +343,8 @@ Perform the sift-down operation to maintain heap property.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-heap_sort">
@@ -322,7 +365,6 @@ values than their children).
 The "sorting" phase repeatedly removes the minimum element from the heap
 and places it at the end of the array until the heap is empty.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list</em> <br>
@@ -332,4 +374,4 @@ and places it at the end of the array until the heap is empty.
 <em>list</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The sorted list in ascending order. <br>
 
----
+______________________________________________________________________

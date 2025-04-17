@@ -7,26 +7,39 @@ edit_distance(str1: str, str2: str, distance: str = 'dl') -> float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Compute the edit distance between two strings using a specified distance
-    metric.
+```
+Compute the edit distance between two strings using a specified distance
+metric.
+```
+
 <br></li>
+
 <li> <a href='#function-hamming_distance'><code>
 hamming_distance(str1: str, str2: str) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Calculate the Hamming distance between two strings.
+```
+Calculate the Hamming distance between two strings.
+```
+
 <br></li>
+
 <li> <a href='#function-jaro_distance'><code>
 jaro_distance(str1: str, str2: str) -> float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Calculate the Jaro similarity between two strings.
+```
+Calculate the Jaro similarity between two strings.
+```
+
 <br></li>
+
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-edit_distance">
@@ -48,7 +61,6 @@ Hamming distance works only for the strings with the same length and
 share a large share of characters (including their positions), e.g.
 'karoline' and 'kathrine'.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>str1</strong>: <em>str</em> <br>
@@ -65,7 +77,8 @@ share a large share of characters (including their positions), e.g.
 <strong>ValueError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the distance is 'hamming' and the input strings have different lengths. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-hamming_distance">
@@ -76,7 +89,6 @@ Calculate the Hamming distance between two strings.
 The Hamming distance is the number of positions at which the
 corresponding elements in the input strings of the same length are
 different.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -92,7 +104,8 @@ different.
 <strong>ValueError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the input strings have different lengths. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-jaro_distance">
@@ -112,7 +125,6 @@ accordingly,
 transpositions is the number of matching characters that are not in the
 right order.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>str1</strong>: <em>str</em> <br>
@@ -124,4 +136,4 @@ right order.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The Jaro similarity between the two input strings. <br>
 
----
+______________________________________________________________________

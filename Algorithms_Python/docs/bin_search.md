@@ -7,18 +7,27 @@ bin_search(array: list[int], value_to_search: int, no_recursion=False) -> bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Binary search in a sorted array.
+```
+Binary search in a sorted array.
+```
+
 <br></li>
+
 <li> <a href='#function-_bin_search'><code>
 _bin_search(array, left_edge, right_edge, value_to_search) -> bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Helper function for binary search with recursion.
+```
+Helper function for binary search with recursion.
+```
+
 <br></li>
+
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_bin_search">
@@ -28,7 +37,6 @@ This is the binary search with recursion implementation helper.
 
 Binary search with recursion works on the cut,
 so edges of the cut inside the array have to be provided.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -45,7 +53,8 @@ so edges of the cut inside the array have to be provided.
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Whether searched value is inside the array <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-bin_search">
@@ -54,7 +63,6 @@ so edges of the cut inside the array have to be provided.
 This function performs a binary search inside sorted array
 consisting of whole numbers.
 Time to work: O(log2 of the size of the array) - best case
-
 
 <h2>Parameters</h2>
 <ul>
@@ -69,4 +77,4 @@ Time to work: O(log2 of the size of the array) - best case
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Whether searched value is inside the array <br>
 
----
+______________________________________________________________________

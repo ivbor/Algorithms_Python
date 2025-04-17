@@ -22,7 +22,6 @@ with a first-in-first-out (FIFO) ordering of elements.
 Elements are added to the back (enqueued) and
 removed from the front (dequeued) of the queue.
 
-
 <h2>Methods</h2>
 <ul>
 <li> <a href='#function-push'><code>
@@ -35,15 +34,14 @@ pop(self)
 </code></a> <br> </li>
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-push">
 <strong>Function</strong>
 <code>push</code></h1>
 Enqueue an element to the back of the queue.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -54,7 +52,8 @@ Enqueue an element to the back of the queue.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-pop">
@@ -62,9 +61,8 @@ Enqueue an element to the back of the queue.
 <code>pop</code></h1>
 Dequeue and return the element from the front of the queue.
 
-
 <h2>Returns</h2>
 <em>any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The element removed from the front of the queue. <br>
 
----
+______________________________________________________________________

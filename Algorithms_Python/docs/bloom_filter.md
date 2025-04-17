@@ -19,9 +19,13 @@ hashlittle(data, initval=0) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    All functions above participate in calculating Jenkins hash of data
-    using an optional seed.
+```
+All functions above participate in calculating Jenkins hash of data
+using an optional seed.
+```
+
 <br></li>
+
 </ul>
 
 <h2>Classes</h2>
@@ -45,7 +49,6 @@ It utilises rot(), mix(), final(), hashlittle() functions to
 calculate Jenkins hash as a python translation of the author's
 original C++ algorithm.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>data</strong>: <em>Any</em> <br>
@@ -57,7 +60,8 @@ original C++ algorithm.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Jenkins hash of data <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-Bloom_filter">
@@ -73,7 +77,6 @@ This particular implementation requires expected false positives
 probability and items to be passed count and determines its size
 and creates all hash functions on its own provided the algorithm
 for function family.
-
 
 <h2>Attributes</h2>
 <ul>
@@ -96,49 +99,65 @@ __init__(self, items_count: int = 1000000,
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-   Creates an instance of Bloom filter.
+Creates an instance of Bloom filter.
 <br></li>
+
 <li> <a href='#function-add'><code>
 add(self, item: any) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Passes through the Bloom filter given item.
+```
+Passes through the Bloom filter given item.
+```
+
 <br></li>
+
 <li> <a href='#function-check'><code>
 check(self, item: any) -> Bloom_filter
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Checks whether the item was passed through Bloom filter.
+```
+Checks whether the item was passed through Bloom filter.
+```
+
 <br></li>
+
 <li> <a href='#function-get_size'><code>
 get_size(self, items_count: int, fp_prob: float) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Calculates full size of the Bloom filter.
+```
+Calculates full size of the Bloom filter.
+```
+
 <br></li>
+
 <li> <a href='#function-get_hash_count'><code>
 get_hash_count(self, size: int, items_count: int) -> int:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Calculates the necessary amount of hash functions to ensure
-    false positives probability with expected
-    items to be passed count.
+```
+Calculates the necessary amount of hash functions to ensure
+false positives probability with expected
+items to be passed count.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Creates an instance of Bloom filter
-
 
 <h2>Parameters</h2>
 <ul>
@@ -153,14 +172,14 @@ Creates an instance of Bloom filter
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-add">
 <strong>Function</strong>
 <code>add</code></h1>
 Passes given item through Bloom filter.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -171,14 +190,14 @@ Passes given item through Bloom filter.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-check">
 <strong>Function</strong>
 <code>check</code></h1>
 Checks whether the item was passed through the Bloom filter.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -189,14 +208,14 @@ Checks whether the item was passed through the Bloom filter.
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;True if the item was passed through, False if it was not. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-get_size">
 <strong>Function</strong>
 <code>get_size</code></h1>
 Calculates the size of bloom filter for its initialization.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -209,7 +228,8 @@ Calculates the size of bloom filter for its initialization.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Size of the bloom filter. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-get_hash_count">
@@ -217,7 +237,6 @@ Calculates the size of bloom filter for its initialization.
 <code>get_hash_count</code></h1>
 Calculates amount of hash functions necessary to assure
 required false probability.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -230,4 +249,4 @@ required false probability.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Amount of hash functions to generate different hashes. <br>
 
----
+______________________________________________________________________

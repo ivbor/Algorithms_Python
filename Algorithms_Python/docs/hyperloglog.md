@@ -20,7 +20,6 @@ HyperLogLog Algorithm Implementation
 This class provides methods to estimate the cardinality of a
 large data set using the HyperLogLog algorithm.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>precision</strong>: <em>int, optional</em> <br>
@@ -33,47 +32,66 @@ __init__(self, precision=14) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Initialize HyperLogLog structure.
+```
+Initialize HyperLogLog structure.
+```
+
 <br></li>
+
 <li> <a href='#function-_hash'><code>
 _hash(self, element: str) -> str
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Hash the element using SHA256.
+```
+Hash the element using SHA256.
+```
+
 <br></li>
+
 <li> <a href='#function-_leading_zeros'><code>
 _leading_zeros(self, binary_string: str) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Count the number of leading zeros in a binary string.
+```
+Count the number of leading zeros in a binary string.
+```
+
 <br></li>
+
 <li> <a href='#function-add'><code>
 add(self, element: str) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Add an element to the HyperLogLog data structure.
+```
+Add an element to the HyperLogLog data structure.
+```
+
 <br></li>
+
 <li> <a href='#function-count'><code>
 count(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Estimate the cardinality of the data set.
+```
+Estimate the cardinality of the data set.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Initialize a HyperLogLog object with a given precision.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -84,14 +102,14 @@ Initialize a HyperLogLog object with a given precision.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_hash">
 <strong>Function</strong>
 <code>_hash</code></h1>
 Hash the element using SHA256.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -102,14 +120,14 @@ Hash the element using SHA256.
 <em>str</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The binary hash value of the element. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_leading_zeros">
 <strong>Function</strong>
 <code>_leading_zeros</code></h1>
 Count the number of leading zeros in a binary string.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -120,14 +138,14 @@ Count the number of leading zeros in a binary string.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The number of leading zeros. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-add">
 <strong>Function</strong>
 <code>add</code></h1>
 Add an element to the HyperLogLog data structure.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -138,7 +156,8 @@ Add an element to the HyperLogLog data structure.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-count">
@@ -146,9 +165,8 @@ Add an element to the HyperLogLog data structure.
 <code>count</code></h1>
 Estimate the cardinality of the data set.
 
-
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The estimated cardinality of the data set. <br>
 
----
+______________________________________________________________________

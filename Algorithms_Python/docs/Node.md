@@ -21,7 +21,6 @@ The Node class represents a simple one-way node that can store data and
 have a reference to the next node in a linked list. It supports basic
 operations like getting the next node and printing the data.
 
-
 <h2>Attributes</h2>
 <ul>
 <li> <strong>_next_node</strong>: <em>Node or None</em> <br>
@@ -53,15 +52,14 @@ __eq__(self, other)
 </code></a> <br> </li>
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Initialize a Node object with optional data and next node.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -77,7 +75,8 @@ Initialize a Node object with optional data and next node.
 <strong>TypeError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If the provided next_node is of the wrong type. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__str__">
@@ -85,12 +84,12 @@ Initialize a Node object with optional data and next node.
 <code>__str__</code></h1>
 Return a string representation of the data stored in the node.
 
-
 <h2>Returns</h2>
 <em>str</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The string representation of the data. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__next__">
@@ -98,12 +97,12 @@ Return a string representation of the data stored in the node.
 <code>__next__</code></h1>
 Get the reference to the next node.
 
-
 <h2>Returns</h2>
 <em>Node or None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The reference to the next node or None if it doesn't exist. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__repr__">
@@ -111,19 +110,18 @@ Get the reference to the next node.
 <code>__repr__</code></h1>
 Return a string representation of the node.
 
-
 <h2>Returns</h2>
 <em>str</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The string representation of the node. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__eq__">
 <strong>Function</strong>
 <code>__eq__</code></h1>
 Compare if two nodes are the same (reference equality).
-
 
 <h2>Parameters</h2>
 <ul>
@@ -134,7 +132,8 @@ Compare if two nodes are the same (reference equality).
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;True if both nodes are the same, False otherwise. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-next_node">
@@ -142,19 +141,18 @@ Compare if two nodes are the same (reference equality).
 <code>next_node</code></h1>
 Get the reference to the next node.
 
-
 <h2>Returns</h2>
 <em>Node or None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The reference to the next node or None if it doesn't exist. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-next_node">
 <strong>Function</strong>
 <code>next_node</code></h1>
 Set the reference to the next node.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -165,7 +163,8 @@ Set the reference to the next node.
 <strong>TypeError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If the provided next_node is of the wrong type. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-data">
@@ -173,12 +172,12 @@ Set the reference to the next node.
 <code>data</code></h1>
 Get or set the data stored in the node.
 
-
 <h2>Returns</h2>
 <em>any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The data stored in the node. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-data">
@@ -186,11 +185,10 @@ Get or set the data stored in the node.
 <code>data</code></h1>
 Set the data stored in the node.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>data</strong>: <em>any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The data to be stored in the node. <br></li>
 </ul>
 
----
+______________________________________________________________________

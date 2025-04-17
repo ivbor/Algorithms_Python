@@ -10,7 +10,8 @@ real_bin_search(func, func_value, left_edge,
 </code></a> <br> </li>
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-real_bin_search">
@@ -23,7 +24,6 @@ It works only for monotonic functions and
 has a time complexity of O(log2(n)),
 where n is the number of epsilon intervals that can fit in the
 absolute difference between right_edge and left_edge.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -47,4 +47,4 @@ absolute difference between right_edge and left_edge.
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Is raised if the check parameter is set to True and the func_value is unreachable within the given edges. <br>
 
----
+______________________________________________________________________

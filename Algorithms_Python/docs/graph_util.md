@@ -7,8 +7,12 @@ reconstruct_path(src: int, target: int, parent: list[int]) -> list[int]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    A function to reconstruct path from source to target using parent array.
+```
+A function to reconstruct path from source to target using parent array.
+```
+
 <br></li>
+
 </ul>
 
 <h2>Classes</h2>
@@ -28,7 +32,6 @@ Graph_util
 <code>reconstruct_path</code></h1>
 Function to reconstruct path from source to target using parent array.
 
-
 <h2>Parameters</h2>
 <ul>
 <li> <strong>src</strong>: <em>int</em> <br>
@@ -42,14 +45,14 @@ Function to reconstruct path from source to target using parent array.
 <em>list[int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Path from the start vertex to the target, including both. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-Graph_util">
 <strong>Class</strong>
 <code>Graph_util</code></h1>
 Class storing utility methods for the main graph class.
-
 
 <h2>Methods</h2>
 <ul>
@@ -59,32 +62,48 @@ _find_arg(self, default: Any, arg_dict: dict[int, str], *args, **kwargs)
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Method for finding arg among args and kwargs provided.
+```
+Method for finding arg among args and kwargs provided.
+```
+
 <br></li>
+
 <li> <a href='#function-_find_index'><code>
 _find_index(self, **kwargs) -> int | None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Method finding index of the vertex to remove among kwargs by data or
-    index.
+```
+Method finding index of the vertex to remove among kwargs by data or
+index.
+```
+
 <br></li>
+
 <li> <a href='#function-is_cyclic_util'><code>
 is_cyclic_util(self, vertex: int,
       visited: list[bool], rec_stack: list[bool]) -> bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Utility method which is used by is cyclic method.
+```
+Utility method which is used by is cyclic method.
+```
+
 <br></li>
+
 <li> <a href='#function-topological_sort_util'><code>
 topological_sort_util(self, vertex: int,
        visited: list[bool], stack: list[int]) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Utility method which is used by topological sort method.
+```
+Utility method which is used by topological sort method.
+```
+
 <br></li>
+
 <li> <a href='#function-tarjan_dfs'><code>
 tarjan_dfs(self, vertex: int, index: list[int],
      stack: list[int], low_link: list[int], on_stack: list[bool],
@@ -92,75 +111,106 @@ tarjan_dfs(self, vertex: int, index: list[int],
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Utility method which is used by tarjan_scc method.
+```
+Utility method which is used by tarjan_scc method.
+```
+
 <br></li>
+
 <li> <a href='#function-fill_order'><code>
 fill_order(self, vertex: int, visited: set[int],
      stack: list[int]) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Utility function for DFS and to fill the stack with vertices
-    based on their finishing times.
+```
+Utility function for DFS and to fill the stack with vertices
+based on their finishing times.
+```
+
 <br></li>
+
 <li> <a href='#function-bfs_level_graph'><code>
 bfs_level_graph(self, source: int) -> list[int]:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    A method to set up levels for vertices for Dinic's algorithms
-    using BFS.
+```
+A method to set up levels for vertices for Dinic's algorithms
+using BFS.
+```
+
 <br></li>
+
 <li> <a href='#function-dfs_blocking_flow'><code>
 dfs_blocking_flow(self, source: int, sink: int, flow: int,
        levels: list[int]) -> int:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Performs DFS to find a blocking flow in a level graph
-    from source to sink.
+```
+Performs DFS to find a blocking flow in a level graph
+from source to sink.
+```
+
 <br></li>
+
 <li> <a href='#function-initialize_preflow'><code>
 initialize_preflow(self, source: int) -> None:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Initializes heights and preflows for all vertices
-    for Goldberg-Tarjan's flow calculation algorithm.
+```
+Initializes heights and preflows for all vertices
+for Goldberg-Tarjan's flow calculation algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-push_flow'><code>
 push_flow(self, u: int, v: int) -> bool:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    A method to push flow from vertex with index u
-    to the vertex with index v if push is possible.
+```
+A method to push flow from vertex with index u
+to the vertex with index v if push is possible.
+```
+
 <br></li>
+
 <li> <a href='#function-lift_vertex'><code>
 lift_vertex(self, u: int) -> None:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Increase vertex height by 1.
+```
+Increase vertex height by 1.
+```
+
 <br></li>
+
 <li> <a href='#function-discharge_excess_flow'><code>
 discharge_excess_flow(self, u: int) -> None:
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Discharge excess flow down the path to the sink from the vertex.
+```
+Discharge excess flow down the path to the sink from the vertex.
+```
+
 <br></li>
+
 </ul>
 
+______________________________________________________________________
 
----
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_find_arg">
 <strong>Function</strong>
 <code>_find_arg</code></h1>
 Find the required argument among args.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -173,7 +223,8 @@ Find the required argument among args.
 <em>Any</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The required argument found within args or kwargs or the default value if the argument was not found. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_find_index">
@@ -181,7 +232,6 @@ Find the required argument among args.
 <code>_find_index</code></h1>
 Find index of the vertex by data or index provided in kwargs
 for further removal.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -197,14 +247,14 @@ kwargs['data']: Any Data inside the vertex to remove. <br></li>
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If data or index were not found among kwargs. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-is_cyclic_util">
 <strong>Function</strong>
 <code>is_cyclic_util</code></h1>
 Utility method which is used by is cyclic method.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -219,14 +269,14 @@ Utility method which is used by is cyclic method.
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Whether the cycle was discovered during current iteration. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-topological_sort_util">
 <strong>Function</strong>
 <code>topological_sort_util</code></h1>
 Utility method which is used by topological sort method.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -241,14 +291,14 @@ Utility method which is used by topological sort method.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-tarjan_dfs">
 <strong>Function</strong>
 <code>tarjan_dfs</code></h1>
 Utility method which is used by tarjan_scc method.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -269,7 +319,8 @@ Utility method which is used by tarjan_scc method.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-fill_order">
@@ -277,7 +328,6 @@ Utility method which is used by tarjan_scc method.
 <code>fill_order</code></h1>
 Utility function for DFS and to fill the stack with vertices
 based on their finishing times.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -292,7 +342,8 @@ based on their finishing times.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-bfs_level_graph">
@@ -300,7 +351,6 @@ based on their finishing times.
 <code>bfs_level_graph</code></h1>
 A method to set up levels for vertices for Dinic's algorithms
 using BFS.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -311,7 +361,8 @@ using BFS.
 <em>list[int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The list of levels of vertices where indexes are ones of vertices and values are levels. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-dfs_blocking_flow">
@@ -319,7 +370,6 @@ using BFS.
 <code>dfs_blocking_flow</code></h1>
 Performs DFS to find a blocking flow in a level graph
 from source to sink.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -339,7 +389,8 @@ from source to sink.
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If a reverse edge necessary for updating flow does not exist, indicating an inconsistency in the graph's edge management. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-initialize_preflow">
@@ -347,7 +398,6 @@ from source to sink.
 <code>initialize_preflow</code></h1>
 Initializes heights and preflows for all vertices
 for Goldberg-Tarjan's flow calculation algorithm.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -358,7 +408,8 @@ for Goldberg-Tarjan's flow calculation algorithm.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-push_flow">
@@ -366,7 +417,6 @@ for Goldberg-Tarjan's flow calculation algorithm.
 <code>push_flow</code></h1>
 A method to push flow from vertex with index u
 to the vertex with index v if push is possible.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -379,14 +429,14 @@ to the vertex with index v if push is possible.
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Whether it was possible to push flow. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-lift_vertex">
 <strong>Function</strong>
 <code>lift_vertex</code></h1>
 Increase vertex height by 1.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -397,14 +447,14 @@ Increase vertex height by 1.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-discharge_excess_flow">
 <strong>Function</strong>
 <code>discharge_excess_flow</code></h1>
 Discharge excess flow down the path to the sink from the vertex.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -415,4 +465,4 @@ Discharge excess flow down the path to the sink from the vertex.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
----
+______________________________________________________________________

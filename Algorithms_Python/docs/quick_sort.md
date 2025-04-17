@@ -7,69 +7,102 @@ quick_sort(array: list[float], pivot_str: str = 'random') -> list[float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sorts a list of elements using the Quick Sort algorithm.
+```
+Sorts a list of elements using the Quick Sort algorithm.
+```
+
 <br></li>
+
 <li> <a href='#function-split'><code>
 split(a: list[float], pivot: float, left_edge: int, right_edge: int) ->
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    tuple
-    Divides the input array into two parts relative to the pivot value.
+```
+tuple
+Divides the input array into two parts relative to the pivot value.
+```
+
 <br></li>
+
 <li> <a href='#function-avg'><code>
 avg(a: list[float], left_edge: int, right_edge: int) -> float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Calculates the average value of elements in a specified range.
+```
+Calculates the average value of elements in a specified range.
+```
+
 <br></li>
+
 <li> <a href='#function-clst_avg'><code>
 clst_avg(a: list[float], avg: float, left_edge: int, right_edge: int) ->
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    float
-    Finds the element closest to the average value in a specified range.
+```
+float
+Finds the element closest to the average value in a specified range.
+```
+
 <br></li>
+
 <li> <a href='#function-_quick_sort'><code>
 _quick_sort(array: list[float], left_edge: int, right_edge: int,
  pivot_str: str = 'random') -> list[float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Performs the Quick Sort algorithm on a given array within specified
-    indices.
+```
+Performs the Quick Sort algorithm on a given array within specified
+indices.
+```
+
 <br></li>
+
 <li> <a href='#function-median_of_medians'><code>
 median_of_medians(array: list[float], left: int, right: int) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Finds the index of median of medians for a given array within specified
-    indices.
+```
+Finds the index of median of medians for a given array within specified
+indices.
+```
+
 <br></li>
+
 <li> <a href='#function-partition_small'><code>
 partition_small(array: list[float], left: int, right: int, opt: bool = True)
  -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Sorts a small portion of the array using a bubble sort to find a
-    median inside this array portion.
-    Optimised version (opt=True) calls Insertion Sort for small arrays.
+```
+Sorts a small portion of the array using a bubble sort to find a
+median inside this array portion.
+Optimised version (opt=True) calls Insertion Sort for small arrays.
+```
+
 <br></li>
+
 <li> <a href='#function-median_of_three'><code>
 median_of_three(array: list[float], left: int, right: int) -> float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-    Finds the median of three elements in a given array within specified
-    indices.
+```
+Finds the median of three elements in a given array within specified
+indices.
+```
+
 <br></li>
+
 </ul>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-split">
@@ -77,10 +110,9 @@ median_of_three(array: list[float], left: int, right: int) -> float
 <code>split</code></h1>
 Split Function
 
-Divide the input array  into two parts relative to the pivot value.
+Divide the input array into two parts relative to the pivot value.
 Elements less than pivot are moved to the left,
 and elements greater or equal are moved to the right.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -97,14 +129,14 @@ and elements greater or equal are moved to the right.
 <em>tuple</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A tuple containing two indices that represent the new boundaries for the split parts. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-clst_avg">
 <strong>Function</strong>
 <code>clst_avg</code></h1>
 Calculate the average value of elements in a specified range.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -119,14 +151,14 @@ Calculate the average value of elements in a specified range.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The average value of elements in the specified range. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-partition_small">
 <strong>Function</strong>
 <code>partition_small</code></h1>
 Partition a small portion of the array using a bubble sort algorithm.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -141,14 +173,14 @@ Partition a small portion of the array using a bubble sort algorithm.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The index representing the partitioned element. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-median_of_medians">
 <strong>Function</strong>
 <code>median_of_medians</code></h1>
 Find the median of medians for a given array within specified indices.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -163,7 +195,8 @@ Find the median of medians for a given array within specified indices.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The median of medians. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-median_of_three">
@@ -171,7 +204,6 @@ Find the median of medians for a given array within specified indices.
 <code>median_of_three</code></h1>
 Find the median of three elements in a given array within specified
 indices.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -186,7 +218,8 @@ indices.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The median of three elements. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_quick_sort">
@@ -198,7 +231,6 @@ Sort the input array using the Quick Sort algorithm. This function
 performs a divide-and-conquer approach by selecting a pivot value and
 splitting the array into two parts: elements less than the pivot and
 elements greater or equal to the pivot.
-
 
 <h2>Parameters</h2>
 <ul>
@@ -217,7 +249,8 @@ elements greater or equal to the pivot.
 <em>list</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The sorted array. <br>
 
----
+______________________________________________________________________
+
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-quick_sort">
@@ -229,21 +262,21 @@ Sort the input list using the Quick Sort algorithm. This function is a
 wrapper for the `_quick_sort` function and sets initial values for the
 sorting process. A wide selection of pivot strategies is available.
 Average and worst space complexities:
+
 - random: O(log n), O(n)
 - closest to the average: O(log n), O(n)
 - median of three: O(log n), O(log n)
 - median of medians: O(log n), O(log n)
-Average and worst time complexities:
-- random: O(n * log n), O(n ** 2)
+  Average and worst time complexities:
+- random: O(n * log n), O(n \*\* 2)
 - closest to the average: O(n * log n), O(n * log n)
 - median of three: O(n * log n), O(n * log n)
 - median of medians: O(n * log n), O(n * log n)
-Important considerations:
-O(n ** 2) performance is so extremely rare, it has no implications in
-practical usage. Median of medians pivot calculation suffers from
-big constant factor, which makes it impractical for small arrays.
-It is worth noting that quick sort is unstable.
-
+  Important considerations:
+  O(n \*\* 2) performance is so extremely rare, it has no implications in
+  practical usage. Median of medians pivot calculation suffers from
+  big constant factor, which makes it impractical for small arrays.
+  It is worth noting that quick sort is unstable.
 
 <h2>Parameters</h2>
 <ul>
@@ -258,4 +291,4 @@ It is worth noting that quick sort is unstable.
 <em>list</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The sorted list. <br>
 
----
+______________________________________________________________________
