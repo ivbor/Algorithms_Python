@@ -22,7 +22,7 @@ sys.path.append('path/to/Algorithms_Python-master/')
 or any other way.
 
 Table of contents is
-[here](./docs/Table_of_contents.md).
+[here](./Algorithms_Python/docs/Table_of_contents.md).
 
 All documentation is within the source code so that it automatically loads by
 any decent IDE. In Vim works perfectly :)
@@ -31,7 +31,7 @@ All tests are inside `./tests/`, examples of usage are also there.
 
 For sorts and some interesting data types performance tuning and comparing
 to python standard ones can be found in
-[here](./speed_tuning/README.md).
+[here](./Algorithms_Python/speed_tuning/README.md).
 
 Virtual environment made by venv with requirements for python listed in
 `requirements.txt`
