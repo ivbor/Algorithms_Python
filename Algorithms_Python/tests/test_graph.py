@@ -315,7 +315,6 @@ weights = [[random.uniform(-100, 100) for _ in range(4)] for _ in range(5)]
 
 @pytest.fixture
 def con5():
-    global weights
     edges = [[4, 3, 2, 1], [0, 2, 4, 3], [3, 1, 4, 0],
              [2, 4, 1, 0], [2, 1, 3, 0]]
     undir = Graph()
@@ -328,6 +327,7 @@ def con5():
         for vertex_nr, vertex in enumerate(edges):
             for edge_nr, edge in enumerate(vertex):
                 if type(graph) == WeightedGraph:
+                    global weights
                     graph.add_edge(vertex_nr, edge,
                                    weight=weights[vertex_nr][edge_nr])
                 if type(graph) == Graph:
@@ -411,7 +411,6 @@ def test_bfs(uncon2, con2, con5, bfs_graph):
 
 
 def test_adjancency_matrix(con5):
-    global weights
     for i in range(2):
         if type(con5[i]) == Graph:
             assert con5[i].to_adjacency_matrix() == [[0, 1, 1, 1, 1],
