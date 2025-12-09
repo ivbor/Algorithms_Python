@@ -94,7 +94,7 @@ def test_find_kwarg_with_edges(graphs, nodes):
         graph_instance[nr].add_vertex(**nodes2[nr])
         assert graph_instance[nr].all_vertices() == ['3', '4']
         assert [i for i in graph_instance[nr].vertices[1].edges.keys()] == [0]
-        if type(graph_instance[nr]) == WeightedGraph:
+        if type(graph_instance[nr]) == WeightedGraph:  # noqa: E721
             assert graph_instance[nr].vertices[1].edges[0].weight == 5
 
 
@@ -257,13 +257,13 @@ def test_add_vertices_manipulate_edges_remove_vertices():
     for graph in graphs:
         for vertex_nr, vertex in enumerate(edges):
             for edge_nr, edge in enumerate(vertex):
-                if type(graph) == WeightedGraph:
+                if type(graph) == WeightedGraph:  # noqa: E721
                     graph.add_edge(vertex_nr, edge,
                                    weight=weights[vertex_nr][edge_nr])
                     assert edge in graph.vertices[vertex_nr].edges
                     assert graph.vertices[vertex_nr].edges[edge]\
                         .weight == weights[vertex_nr][edge_nr]
-                if type(graph) == Graph:
+                if type(graph) == Graph:  # noqa: E721
                     graph.add_edge(vertex_nr, edge)
                     assert edge in graph.vertices[vertex_nr].edges
     undir.remove_edge(0, 4)
@@ -326,11 +326,10 @@ def con5():
     for graph in graphs:
         for vertex_nr, vertex in enumerate(edges):
             for edge_nr, edge in enumerate(vertex):
-                if type(graph) == WeightedGraph:
-                    global weights
+                if type(graph) == WeightedGraph:  # noqa: E721
                     graph.add_edge(vertex_nr, edge,
                                    weight=weights[vertex_nr][edge_nr])
-                if type(graph) == Graph:
+                if type(graph) == Graph:  # noqa: E721
                     graph.add_edge(vertex_nr, edge)
     return graphs
 
@@ -412,13 +411,13 @@ def test_bfs(uncon2, con2, con5, bfs_graph):
 
 def test_adjancency_matrix(con5):
     for i in range(2):
-        if type(con5[i]) == Graph:
+        if type(con5[i]) == Graph:  # noqa: E721
             assert con5[i].to_adjacency_matrix() == [[0, 1, 1, 1, 1],
                                                      [1, 0, 1, 1, 1],
                                                      [1, 1, 0, 1, 1],
                                                      [1, 1, 1, 0, 1],
                                                      [1, 1, 1, 1, 0]]
-        if type(con5[i]) == WeightedGraph:
+        if type(con5[i]) == WeightedGraph:   # noqa: E721
             adj_mtx = con5[i].to_adjacency_matrix()
             for row_nr in range(len(adj_mtx)):
                 for col_nr in range(len(con5[i].vertices)):
