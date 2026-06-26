@@ -320,7 +320,10 @@ class Graph(Graph_util):
         starting from a specified vertex to a target vertex,
         returning the path.
 
-        This function utilizes BFS.
+        This function utilizes the shared BFS traversal helper.
+        It records each vertex parent in the `after_enter` callback
+        and reconstructs the path after traversal.
+
         Time complexity: O(V + E)
         Space complexity: O(V)
 
@@ -344,29 +347,22 @@ class Graph(Graph_util):
             If no path exists between the start and target vertices.
         """
 
-        to_return = []
-        visited = [False] * (
-            max([vertex.index for vertex in self.vertices]) + 1)
-        predecessor = [None] * (
-            max([vertex.index for vertex in self.vertices]) + 1)
-        current_row = [start]
-        visited[start] = True
+        predecessor = [None] * self._vertex_state_size()
 
-        while len(current_row) != 0:
-            vertex = current_row[0]
-            current_row = current_row[1:]
-            if target is not None:
-                if vertex == target:
-                    current = target
-                    while current is not None:
-                        to_return.append(current)
-                        current = predecessor[current]
-                    return to_return[::-1]
-            for neighbor in self.vertices[vertex].edges.keys():
-                if not visited[neighbor]:
-                    current_row.append(neighbor)
-                    visited[neighbor] = True
-                    predecessor[neighbor] = vertex
+        def after_enter(vertex: int, parent: int | None) -> None:
+            predecessor[vertex] = parent
+
+        visited = [False] * self._vertex_state_size()
+        self._bfs_traverse(start, visited, after_enter=after_enter)
+
+        if target is not None and visited[target]:
+            path = []
+            current = target
+            while current is not None:
+                path.append(current)
+                current = predecessor[current]
+            return path[::-1]
+
         if target is not None:
             raise IndexError(
                 f'there is no path between {start} and {target}')
@@ -416,8 +412,11 @@ class Graph(Graph_util):
         """
         Method discovering whether the graph contains cycles.
 
-        This function utilizes DFS.
+        This function utilizes the shared DFS traversal helper.
+        The recursion-stack state is updated with enter and exit callbacks.
+
         Time complexity: O(V + E)
+        Space complexity: O(V)
 
         Returns
         -------
@@ -426,8 +425,8 @@ class Graph(Graph_util):
         """
 
         # Mark all the vertices as not visited
-        visited = [False] * len(self.vertices)
-        rec_stack = [False] * len(self.vertices)
+        visited = [False] * self._vertex_state_size()
+        rec_stack = [False] * self._vertex_state_size()
 
         # Call the recursive helper function
         # to detect cycle in different DFS trees
@@ -443,8 +442,11 @@ class Graph(Graph_util):
         Performs a topological sort of the graph if it is acyclic,
         returning an ordered list of vertex indices.
 
-        This function utilizes DFS.
+        This function utilizes the shared DFS traversal helper.
+        Each vertex is placed into the output order in the exit callback.
+
         Time complexity: O(V + E)
+        Space complexity: O(V)
 
         Returns
         -------
@@ -462,7 +464,7 @@ class Graph(Graph_util):
                 "The graph has a cycle. Topological sort is not possible.")
 
         # Perform Topological Sort
-        visited = [False] * len(self.vertices)
+        visited = [False] * self._vertex_state_size()
         stack = []
 
         for index in [vertex.index for vertex in self.vertices]:
@@ -476,8 +478,12 @@ class Graph(Graph_util):
         Finds all strongly connected components in the graph
         using Tarjan's algorithm.
 
-        This function utilizes DFS.
+        This function utilizes DFS with low-link updates. It is not routed
+        through the shared traversal helper because Tarjan's algorithm needs
+        edge-specific state updates after recursive child calls return.
+
         Time complexity: O(V + E)
+        Space complexity: O(V)
 
         Returns
         -------
@@ -540,8 +546,12 @@ class Graph(Graph_util):
         A utility function for DFS traversal that tracks
         the strongly connected component.
 
-        This function utilizes DFS.
+        This function utilizes the shared DFS traversal helper on the
+        reversed graph. It collects the current strongly connected component
+        in the `after_enter` callback.
+
         Time complexity: O(V + E)
+        Space complexity: O(V)
 
         Parameters
         ----------
@@ -558,19 +568,28 @@ class Graph(Graph_util):
         -------
         None
         """
-        visited.add(vertex)
-        scc.append(vertex)
+        visited_list = [False] * reversed_graph._vertex_state_size()
+        for node in visited:
+            visited_list[node] = True
 
-        for neighbor in reversed_graph.vertices[vertex].edges.keys():
-            if neighbor not in visited:
-                self.dfs_util(reversed_graph, neighbor, visited, scc)
+        def after_enter(node: int, parent: int | None) -> None:
+            visited.add(node)
+            scc.append(node)
+
+        reversed_graph._dfs_traverse(
+            vertex, visited_list, after_enter=after_enter)
 
     def kosaraju_scc(self) -> list[list[int]]:
         """
         Finds strongly connected components in the given directed graph
         using Kosaraju's algorithm.
 
+        The two DFS passes are routed through the shared DFS traversal
+        helper: the first pass records finish order and the second pass
+        collects components in the reversed graph.
+
         Time complexity: O(V + E)
+        Space complexity: O(V)
 
         Returns
         -------

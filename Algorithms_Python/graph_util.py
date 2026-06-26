@@ -13,13 +13,17 @@ reconstruct_path(src: int, target: int, parent: list[int]) -> list[int]
 Classes
 -------
 Graph_util
-    A class storing utility methods for the main graph class.
+    A class storing utility methods for the main graph class, including
+    callback-based BFS and DFS traversal helpers.
 
 """
 
 
-from typing import Any
+from typing import Any, Callable
 from collections import deque
+
+
+TraversalCallback = Callable[[int, int | None], bool | None]
 
 
 def reconstruct_path(src: int, target: int, parent: list[int]) -> list[int]:
@@ -56,8 +60,42 @@ class Graph_util:
     """
     Class storing utility methods for the main graph class.
 
+    The shared traversal invariant is:
+    `before_enter(vertex, parent)` is called before a candidate vertex is
+    accepted, `after_enter(vertex, parent)` is called after it is marked
+    visited, `before_exit(vertex, parent)` is called after its outgoing
+    neighbors are processed, and `after_exit(vertex, parent)` is called at
+    the end of the vertex lifecycle. Returning False from a callback stops
+    that branch or traversal step.
+
+    The helpers fit algorithms whose state can be updated on vertex
+    discovery or vertex finish, such as path reconstruction, cycle detection,
+    topological sorting, and Kosaraju DFS passes.
+
     Methods
     -------
+    _vertex_state_size(self) -> int
+        Return one greater than the greatest present vertex index.
+
+    _run_callback(self, callback: TraversalCallback | None,
+                  vertex: int, parent: int | None) -> bool
+        Run a traversal callback and convert its result to a continue flag.
+
+    _dfs_traverse(self, start: int, visited: list[bool],
+                  before_enter: TraversalCallback | None = None,
+                  after_enter: TraversalCallback | None = None,
+                  before_exit: TraversalCallback | None = None,
+                  after_exit: TraversalCallback | None = None,
+                  parent: int | None = None) -> None
+        Depth-first traversal with uniform lifecycle callbacks.
+
+    _bfs_traverse(self, start: int, visited: list[bool],
+                  before_enter: TraversalCallback | None = None,
+                  after_enter: TraversalCallback | None = None,
+                  before_exit: TraversalCallback | None = None,
+                  after_exit: TraversalCallback | None = None) -> None
+        Breadth-first traversal with uniform lifecycle callbacks.
+
     _find_arg(self, default: Any, arg_dict: dict[int, str], *args, **kwargs)
         -> Any
         Method for finding arg among args and kwargs provided.
@@ -89,7 +127,7 @@ class Graph_util:
         using BFS.
 
     dfs_blocking_flow(self, source: int, sink: int, flow: int,
-                          levels: list[int]) -> int:
+                      levels: list[int]) -> int:
         Performs DFS to find a blocking flow in a level graph
         from source to sink.
 
@@ -106,8 +144,181 @@ class Graph_util:
 
     discharge_excess_flow(self, u: int) -> None:
         Discharge excess flow down the path to the sink from the vertex.
-
     """
+
+    def _vertex_state_size(self) -> int:
+        """
+        Return a size that can index every currently present vertex.
+
+        Time complexity: O(V)
+        Space complexity: O(1)
+
+        Returns
+        -------
+        int
+            One greater than the greatest present vertex index.
+        """
+        if len(self.vertices) == 0:
+            return 0
+        return max(vertex.index for vertex in self.vertices) + 1
+
+    def _run_callback(self, callback: TraversalCallback | None,
+                      vertex: int, parent: int | None) -> bool:
+        """
+        Run a traversal callback if one was provided.
+
+        Time complexity: O(1) plus callback time.
+        Space complexity: O(1) plus callback space.
+
+        Parameters
+        ----------
+        callback: TraversalCallback | None
+            Callback to run. If None, traversal continues.
+
+        vertex: int
+            Current vertex index.
+
+        parent: int | None
+            Parent vertex index or None for the root.
+
+        Returns
+        -------
+        bool
+            Whether traversal should continue for the current candidate.
+        """
+        if callback is None:
+            return True
+        result = callback(vertex, parent)
+        return result is not False
+
+    def _dfs_traverse(self, start: int, visited: list[bool],
+                      before_enter: TraversalCallback | None = None,
+                      after_enter: TraversalCallback | None = None,
+                      before_exit: TraversalCallback | None = None,
+                      after_exit: TraversalCallback | None = None,
+                      parent: int | None = None) -> None:
+        """
+        Depth-first traversal with uniform lifecycle callbacks.
+
+        `before_enter` is called for every candidate vertex before the
+        visited check. The other callbacks run only for newly entered
+        vertices.
+
+        Time complexity: O(V + E) plus callback time.
+        Space complexity: O(V) for recursion depth and the visited list.
+
+        Parameters
+        ----------
+        start: int
+            Vertex from which traversal starts.
+
+        visited: list[bool]
+            List where indexes are vertex indexes and values show whether
+            the vertex has been entered.
+
+        before_enter: TraversalCallback | None
+            Callback run before a candidate vertex is entered.
+
+        after_enter: TraversalCallback | None
+            Callback run after a vertex is marked visited.
+
+        before_exit: TraversalCallback | None
+            Callback run after neighbors are processed and before exit.
+
+        after_exit: TraversalCallback | None
+            Callback run after the vertex exits.
+
+        parent: int | None
+            Parent vertex index or None for the root.
+
+        Returns
+        -------
+        None
+        """
+        if not self._run_callback(before_enter, start, parent):
+            return
+        if visited[start]:
+            return
+
+        visited[start] = True
+        if not self._run_callback(after_enter, start, parent):
+            return
+
+        for neighbor in self.vertices[start].edges.keys():
+            self._dfs_traverse(
+                neighbor, visited, before_enter, after_enter,
+                before_exit, after_exit, start)
+
+        if not self._run_callback(before_exit, start, parent):
+            return
+        self._run_callback(after_exit, start, parent)
+
+    def _bfs_traverse(self, start: int, visited: list[bool],
+                      before_enter: TraversalCallback | None = None,
+                      after_enter: TraversalCallback | None = None,
+                      before_exit: TraversalCallback | None = None,
+                      after_exit: TraversalCallback | None = None) -> None:
+        """
+        Breadth-first traversal with uniform lifecycle callbacks.
+
+        `before_enter` is called before a candidate is accepted into the
+        queue. `after_enter` is called when it is marked visited.
+        `before_exit` and `after_exit` are called after the vertex is popped
+        and its outgoing neighbors have been processed.
+
+        Time complexity: O(V + E) plus callback time.
+        Space complexity: O(V) for the queue and the visited list.
+
+        Parameters
+        ----------
+        start: int
+            Vertex from which traversal starts.
+
+        visited: list[bool]
+            List where indexes are vertex indexes and values show whether
+            the vertex has been entered.
+
+        before_enter: TraversalCallback | None
+            Callback run before a candidate vertex is entered.
+
+        after_enter: TraversalCallback | None
+            Callback run after a vertex is marked visited.
+
+        before_exit: TraversalCallback | None
+            Callback run after neighbors are processed and before exit.
+
+        after_exit: TraversalCallback | None
+            Callback run after the vertex exits.
+
+        Returns
+        -------
+        None
+        """
+        if not self._run_callback(before_enter, start, None):
+            return
+        if visited[start]:
+            return
+
+        visited[start] = True
+        self._run_callback(after_enter, start, None)
+        queue = deque([(start, None)])
+
+        while queue:
+            vertex, parent = queue.popleft()
+
+            for neighbor in self.vertices[vertex].edges.keys():
+                if not self._run_callback(before_enter, neighbor, vertex):
+                    continue
+                if not visited[neighbor]:
+                    visited[neighbor] = True
+                    if not self._run_callback(after_enter, neighbor, vertex):
+                        return
+                    queue.append((neighbor, vertex))
+
+            if not self._run_callback(before_exit, vertex, parent):
+                return
+            if not self._run_callback(after_exit, vertex, parent):
+                return
 
     def _find_arg(self, default: Any,
                   arg_dict: dict[int, str], *args, **kwargs) -> Any:
@@ -182,6 +393,14 @@ class Graph_util:
         """
         Utility method which is used by is cyclic method.
 
+        This utility uses the shared DFS traversal callbacks. It marks
+        vertices in the active recursion stack on enter and removes them
+        on exit. Encountering a candidate already in the recursion stack
+        means a directed cycle exists.
+
+        Time complexity: O(V + E)
+        Space complexity: O(V)
+
         Parameters
         ----------
         vertex: int
@@ -201,32 +420,35 @@ class Graph_util:
             Whether the cycle was discovered during current iteration.
         """
 
-        # Mark the current node as visited
-        visited[vertex] = True
-        # And put it on the stack
-        rec_stack[vertex] = True
+        has_cycle = [False]
 
-        # Recur for all the vertices adjacent to this vertex
-        for neighbor in self.vertices[vertex].edges.keys():
+        def before_enter(node: int, parent: int | None) -> bool:
+            if rec_stack[node]:
+                has_cycle[0] = True
+                return False
+            return not has_cycle[0]
 
-            # If the node is not visited then recurse on it
-            if not visited[neighbor]:
-                if self.is_cyclic_util(neighbor, visited, rec_stack):
-                    return True
+        def after_enter(node: int, parent: int | None) -> None:
+            rec_stack[node] = True
 
-            # If an adjacent vertex is visited and
-            # not parent of current vertex, then there is a cycle
-            elif rec_stack[neighbor]:
-                return True
+        def after_exit(node: int, parent: int | None) -> None:
+            rec_stack[node] = False
 
-        # Remove current vertex from the stack after the visit
-        rec_stack[vertex] = False
-        return False
+        self._dfs_traverse(
+            vertex, visited, before_enter=before_enter,
+            after_enter=after_enter, after_exit=after_exit)
+        return has_cycle[0]
 
     def topological_sort_util(self, vertex: int,
                               visited: list[bool], stack: list[int]) -> None:
         """
         Utility method which is used by topological sort method.
+
+        This utility uses the shared DFS traversal callbacks and appends
+        each vertex to the front of the result stack after the vertex exits.
+
+        Time complexity: O(V + E)
+        Space complexity: O(V)
 
         Parameters
         ----------
@@ -245,15 +467,10 @@ class Graph_util:
         None
         """
 
-        visited[vertex] = True
+        def after_exit(node: int, parent: int | None) -> None:
+            stack.insert(0, node)
 
-        # Recur for all the vertices adjacent to this vertex
-        for neighbor in self.vertices[vertex].edges.keys():
-            if not visited[neighbor]:
-                self.topological_sort_util(neighbor, visited, stack)
-
-        # Push current vertex to the stack which stores the result
-        stack.insert(0, vertex)
+        self._dfs_traverse(vertex, visited, after_exit=after_exit)
 
     def tarjan_dfs(self, vertex: int, index: list[int], stack: list[int],
                    low_link: list[int], on_stack: list[bool],
@@ -345,6 +562,13 @@ class Graph_util:
         Utility function for DFS and to fill the stack with vertices
         based on their finishing times.
 
+        This utility uses the shared DFS traversal callbacks and appends
+        each vertex to the stack after the vertex exits. Kosaraju's
+        algorithm uses that stack as decreasing finish-time order.
+
+        Time complexity: O(V + E)
+        Space complexity: O(V)
+
         Parameters
         ----------
         vertex: int
@@ -361,12 +585,20 @@ class Graph_util:
         None
         """
 
-        visited.add(vertex)
+        state_size = self._vertex_state_size()
+        visited_list = [False] * state_size
+        for node in visited:
+            visited_list[node] = True
 
-        for neighbor in self.vertices[vertex].edges.keys():
-            if neighbor not in visited:
-                self.fill_order(neighbor, visited, stack)
-        stack.append(vertex)
+        def after_enter(node: int, parent: int | None) -> None:
+            visited.add(node)
+
+        def after_exit(node: int, parent: int | None) -> None:
+            stack.append(node)
+
+        self._dfs_traverse(
+            vertex, visited_list, after_enter=after_enter,
+            after_exit=after_exit)
 
     def bfs_level_graph(self, source: int) -> list[int]:
         """
