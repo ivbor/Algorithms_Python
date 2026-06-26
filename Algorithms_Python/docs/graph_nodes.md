@@ -39,6 +39,7 @@ Represents a base graph node with basic attributes and methods.
 This class is intended to be extended by other specific types of
 graph nodes.
 
+
 <h2>Attributes</h2>
 <ul>
 <li> <strong>index</strong>: <em>int</em> <br>
@@ -55,44 +56,33 @@ __init__(self, index: int, data: Any, color: int) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Initialize Base Graph Node
-```
-
+    Initialize Base Graph Node
 <br></li>
-
 <li> <a href='#function-__str__'><code>
 __str__(self) -> str
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Return a string representation of the node's data.
-```
-
+    Return a string representation of the node's data.
 <br></li>
-
 <li> <a href='#function-__repr__'><code>
 __repr__(self) -> str
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Return a string representation of the node.
-```
-
+    Return a string representation of the node.
 <br></li>
-
 </ul>
 
-______________________________________________________________________
 
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Initialize a BaseGraphNode object.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -107,8 +97,7 @@ Initialize a BaseGraphNode object.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__str__">
@@ -116,12 +105,12 @@ ______________________________________________________________________
 <code>__str__</code></h1>
 Return a string representation of the node's data.
 
+
 <h2>Returns</h2>
 <em>str</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The string representation of the data. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__repr__">
@@ -129,12 +118,12 @@ ______________________________________________________________________
 <code>__repr__</code></h1>
 Return a string representation of the node.
 
+
 <h2>Returns</h2>
 <em>str</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The string representation of the node. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-Edge">
@@ -144,6 +133,7 @@ Edge Class
 
 Represents an edge in a graph with attributes to manage weights,
 capacities, and flow.
+
 
 <h2>Attributes</h2>
 <ul>
@@ -168,22 +158,19 @@ capacity: int = 0, flow: int = 0, color: int = 0) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Initialize an Edge object.
-```
-
+    Initialize an Edge object.
 <br></li>
-
 </ul>
 
-______________________________________________________________________
 
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Initialize an Edge object.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -204,8 +191,7 @@ Initialize an Edge object.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-GraphNode">
@@ -216,6 +202,7 @@ Graph Node Class
 Represents a graph node with additional functionality to manage edges
 and capacities.
 Extends BaseGraphNode with edge handling capabilities.
+
 
 <h2>Attributes</h2>
 <ul>
@@ -230,22 +217,19 @@ __init__(self, index: int, data: Any, edges: list[Edge] = [],
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Initialize a GraphNode object with edges and capacities.
-```
-
+    Initialize a GraphNode object with edges and capacities.
 <br></li>
-
 </ul>
 
-______________________________________________________________________
 
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
 <strong>Function</strong>
 <code>__init__</code></h1>
 Initialize a GraphNode object with optional edges and capacities.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -267,8 +251,7 @@ Initialize a GraphNode object with optional edges and capacities.
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If the lengths of edges and capacities do not match, indicating an error in input. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-WeightedGraphNode">
@@ -279,6 +262,7 @@ Weighted Graph Node Class
 Represents a graph node that manages both weights and capacities of edges.
 Extends GraphNode to include weights along with the existing attributes.
 
+
 <h2>Methods</h2>
 <ul>
 <li> <a href='#function-__init__'><code>
@@ -288,12 +272,8 @@ __init__(self, index: int, data: Any, edges: list[Edge] = [],
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Initialize a WeightedGraphNode object with weights for the edges.
-```
-
+    Initialize a WeightedGraphNode object with weights for the edges.
 <br></li>
-
 <li> <a href='#function-Raises
 ------
 KeyError
@@ -305,8 +285,8 @@ KeyError
 </code></a> <br> </li>
 </ul>
 
-______________________________________________________________________
 
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -314,6 +294,7 @@ ______________________________________________________________________
 <code>__init__</code></h1>
 Initialize a WeightedGraphNode object with optional weights
 for the edges.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -337,4 +318,4 @@ for the edges.
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If the lengths of edges and weights do not match, indicating an error in input. <br>
 
-______________________________________________________________________
+---

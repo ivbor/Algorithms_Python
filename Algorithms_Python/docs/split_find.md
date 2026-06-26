@@ -23,8 +23,7 @@ _split_find(array, left_edge, right_edge, index)
 </code></a> <br> </li>
 </ul>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-split">
@@ -36,6 +35,7 @@ This function partitions the input array into two subarrays.
 Elements less than pivot are moved to the left subarray,
 and elements equal to pivot (within a small tolerance)
 or greater are moved to the right subarray.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -52,8 +52,7 @@ or greater are moved to the right subarray.
 <em>tuple[int, int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A tuple containing the new left and right edges of the split subarrays. If all elements are moved to one side, it returns (0, 0). <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_split_find">
@@ -67,6 +66,7 @@ at the given index within the subarray defined by left_edge
 and right_edge inside array.
 It uses random pivot selection and the split function to partition
 the array while narrowing down the search range.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -83,8 +83,7 @@ the array while narrowing down the search range.
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The element found at the specified index. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-split_find">
@@ -95,10 +94,11 @@ as if it was already sorted in ascending order.
 
 This function searches for the element at the specified index in
 ascending order in the input array without fully sorting the array.
-It uses the \_split_find function to perform the search.
+It uses the _split_find function to perform the search.
 If an array is already sorted this algorithm becomes Binary search.
 If not - average and worst cases lead to O(n^2) time complexity
 (as if you would have to perform the entire quick sort before search).
+
 
 <h2>Parameters</h2>
 <ul>
@@ -111,4 +111,4 @@ If not - average and worst cases lead to O(n^2) time complexity
 <em>float</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The element found at the specified 'index'. <br>
 
-______________________________________________________________________
+---

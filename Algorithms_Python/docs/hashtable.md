@@ -12,23 +12,15 @@ gen_prime(stop: int = 30) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Generate prime numbers up to a specified stop value.
-```
-
+    Generate prime numbers up to a specified stop value.
 <br></li>
-
 <li> <a href='#function-poly_hash'><code>
 poly_hash(x: Any) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Calculate a polynomial hash value for a given input.
-```
-
+    Calculate a polynomial hash value for a given input.
 <br></li>
-
 </ul>
 
 <h2>Classes</h2>
@@ -79,6 +71,7 @@ It means that multiple key-value pairs with the same hash value
 are stored in linked lists within the hash table.
 It provides methods for adding, retrieving, and removing key-value pairs.
 
+
 <h2>Attributes</h2>
 <ul>
 <li> <strong>capacity</strong>: <em>int</em> <br>
@@ -97,116 +90,76 @@ __init__(self, capacity: int = 30,
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Initializes a HashTable_closed object with specified capacity
-and hash function.
-```
-
+    Initializes a HashTable_closed object with specified capacity
+    and hash function.
 <br></li>
-
 <li> <a href='#function-__setitem__'><code>
 __setitem__(self, key: Hashable, value: Any) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Adds a key-value pair to the hash table.
-```
-
+    Adds a key-value pair to the hash table.
 <br></li>
-
 <li> <a href='#function-__getitem__'><code>
 __getitem__(self, key: Hashable) -> Any
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Retrieves the value associated with a given key.
-```
-
+    Retrieves the value associated with a given key.
 <br></li>
-
 <li> <a href='#function-__delitem__'><code>
 __delitem__(self, key: Hashable) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Removes a key-value pair from the hash table.
-```
-
+    Removes a key-value pair from the hash table.
 <br></li>
-
 <li> <a href='#function-to_dict'><code>
 to_dict(self) -> dict
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Returns a dictionary representation of the hash table.
-```
-
+    Returns a dictionary representation of the hash table.
 <br></li>
-
 <li> <a href='#function-__contains__'><code>
 __contains__(self, key: Hashable) -> bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Checks if a key exists in the hash table.
-```
-
+    Checks if a key exists in the hash table.
 <br></li>
-
 <li> <a href='#function-from_dict'><code>
 from_dict(cls, dictionary: dict) -> HashTable_closed
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Creates a new hash table from a dictionary.
-```
-
+    Creates a new hash table from a dictionary.
 <br></li>
-
 <li> <a href='#function-__str__'><code>
 __str__(self) -> str
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Returns a string representation of the hash table.
-```
-
+    Returns a string representation of the hash table.
 <br></li>
-
 <li> <a href='#function-__repr__'><code>
 __repr__(self) -> str
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Used for printing the contents of the hash table.
-```
-
+    Used for printing the contents of the hash table.
 <br></li>
-
 <li> <a href='#function-__eq__'><code>
 __eq__(self, other: HashTable_closed) -> bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Checks if two hash tables are equal.
-```
-
+    Checks if two hash tables are equal.
 <br></li>
-
 </ul>
 
-______________________________________________________________________
 
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -214,6 +167,7 @@ ______________________________________________________________________
 <code>__init__</code></h1>
 Initializes a HashTable_closed object with specified capacity
 and hash function.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -228,8 +182,7 @@ and hash function.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-get_hash">
@@ -237,6 +190,7 @@ ______________________________________________________________________
 <code>get_hash</code></h1>
 Calculates the hash value for a given key
 using the selected hash function.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -250,8 +204,7 @@ using the selected hash function.
 <strong>TypeError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;If hash function provided during init is not acceptable. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-pairs">
@@ -260,12 +213,12 @@ ______________________________________________________________________
 Property getter method for retrieving the pairs attribute
 of the hash table.
 
+
 <h2>Returns</h2>
 <em>list</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A copy of the internal list of pairs in the hash table. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-pairs">
@@ -285,8 +238,7 @@ Setter method for the pairs attribute.
 <strong></strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-size">
@@ -295,12 +247,12 @@ ______________________________________________________________________
 Property getter method for retrieving the size attribute of the
 hash table.
 
+
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The number of key-value pairs currently stored in the hash table. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-size">
@@ -320,8 +272,7 @@ Setter method for the size attribute.
 <strong></strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-capacity">
@@ -330,12 +281,12 @@ ______________________________________________________________________
 Property getter method for retrieving the capacity attribute
 of the hash table.
 
+
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The current capacity of the hash table. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-capacity">
@@ -355,8 +306,7 @@ Setter method for the capacity attribute.
 <strong></strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__len__">
@@ -364,12 +314,12 @@ ______________________________________________________________________
 <code>__len__</code></h1>
 The number of key-value pairs currently stored in the hash table.
 
+
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The size of the hash table. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__setitem__">
@@ -377,6 +327,7 @@ ______________________________________________________________________
 <code>__setitem__</code></h1>
 Adds or updates (if already taken)
 a key-value pair to the hash table.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -389,14 +340,14 @@ a key-value pair to the hash table.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__getitem__">
 <strong>Function</strong>
 <code>__getitem__</code></h1>
 Retrieves the value associated with a given key from the hash table.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -410,8 +361,7 @@ Retrieves the value associated with a given key from the hash table.
 <strong>    KeyError: If the key is not found in the hash table.</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-increase_capacity">
@@ -419,18 +369,19 @@ ______________________________________________________________________
 <code>increase_capacity</code></h1>
 Increases the capacity of the hash table.
 
+
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-recapacitate_and_rehash">
 <strong>Function</strong>
 <code>recapacitate_and_rehash</code></h1>
 Recalculates the hash values and rehashes the key-value pairs.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -441,8 +392,7 @@ Recalculates the hash values and rehashes the key-value pairs.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-decrease_capacity">
@@ -450,12 +400,12 @@ ______________________________________________________________________
 <code>decrease_capacity</code></h1>
 Decreases the capacity of the hash table.
 
+
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-search">
@@ -463,6 +413,7 @@ ______________________________________________________________________
 <code>search</code></h1>
 Searches for a key in the hash table and returns the index if found,
 or False if not found.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -473,14 +424,14 @@ or False if not found.
 <em>int or False</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The index of the key in the hash table if found, or False if not found. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__delitem__">
 <strong>Function</strong>
 <code>__delitem__</code></h1>
 Removes a key-value pair from the hash table.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -491,8 +442,7 @@ Removes a key-value pair from the hash table.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-to_dict">
@@ -503,14 +453,14 @@ ______________________________________________________________________
 <em>Returns</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;------- dict[Hashable, Any] A dictionary containing the key-value pairs from the hash table. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__contains__">
 <strong>Function</strong>
 <code>__contains__</code></h1>
 Checks if a key exists in the hash table.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -521,14 +471,14 @@ Checks if a key exists in the hash table.
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;True if the key exists in the hash table, False otherwise. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-from_dict">
 <strong>Function</strong>
 <code>from_dict</code></h1>
 Creates a new HashTable_closed object from a dictionary.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -539,8 +489,7 @@ Creates a new HashTable_closed object from a dictionary.
 <em>HashTable_closed</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A new HashTable_closed object initialized with the contents of the dictionary. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__str__">
@@ -551,8 +500,7 @@ ______________________________________________________________________
 <em>Returns</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;------- str A string representation of the hash table as a dictionary. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__repr__">
@@ -563,8 +511,7 @@ ______________________________________________________________________
 <em>Returns</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;------- str A string representation of the hash table as a dictionary. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__eq__">
@@ -572,6 +519,7 @@ ______________________________________________________________________
 <code>__eq__</code></h1>
 Checks if two hash tables are equal by comparing their
 dictionary representations.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -582,8 +530,7 @@ dictionary representations.
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;True if the hash tables are equal, False otherwise. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-HashTable_open">
@@ -598,6 +545,7 @@ it looks for alternative positions within the table using multiple
 hash functions.
 Supported hash functions include 'md5', 'sha1', 'poly' (polynomial hash),
 and custom callable functions.
+
 
 <h2>Attributes</h2>
 <ul>
@@ -615,152 +563,100 @@ __init__(self, capacity: int = 30,
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Initializes a HashTable_open instance with the given capacity
-and hash functions.
-```
-
+    Initializes a HashTable_open instance with the given capacity
+    and hash functions.
 <br></li>
-
 <li> <a href='#function-__setitem__'><code>
 __setitem__(self, key: Hashable, value: Any) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Adds a key-value pair to the hash table.
-```
-
+    Adds a key-value pair to the hash table.
 <br></li>
-
 <li> <a href='#function-__getitem__'><code>
 __getitem__(self, key: Hashable) -> Any
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Retrieves the value associated with a given key.
-```
-
+    Retrieves the value associated with a given key.
 <br></li>
-
 <li> <a href='#function-__delitem__'><code>
 __delitem__(self, key: Hashable) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Removes a key-value pair from the hash table.
-```
-
+    Removes a key-value pair from the hash table.
 <br></li>
-
 <li> <a href='#function-to_dict'><code>
 to_dict(self) -> dict[Hashable, Any]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Returns a dictionary representation of the hash table.
-```
-
+    Returns a dictionary representation of the hash table.
 <br></li>
-
 <li> <a href='#function-update'><code>
 update(self, key: Hashable, value: Any) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Updates the value associated with a given key in the hash table.
-```
-
+    Updates the value associated with a given key in the hash table.
 <br></li>
-
 <li> <a href='#function-search'><code>
 search(self, key: Hashable) -> tuple[int, int] | bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Searches for a key in the hash table and returns
-the table index and hashed key index if found, or False if not found.
-```
-
+    Searches for a key in the hash table and returns
+    the table index and hashed key index if found, or False if not found.
 <br></li>
-
 <li> <a href='#function-increase_capacity'><code>
 increase_capacity(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Increases the capacity of the hash table.
-```
-
+    Increases the capacity of the hash table.
 <br></li>
-
 <li> <a href='#function-decrease_capacity'><code>
 decrease_capacity(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Decreases the capacity of the hash table.
-```
-
+    Decreases the capacity of the hash table.
 <br></li>
-
 <li> <a href='#function-one_table_capacity'><code>
 one_table_capacity(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Calculates the capacity of each individual
-hash table within the open addressing scheme.
-```
-
+    Calculates the capacity of each individual
+    hash table within the open addressing scheme.
 <br></li>
-
 <li> <a href='#function-get_hashes'><code>
 get_hashes(self, key: Hashable) -> Generator[int, None, None]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Generates hash values for a key using the specified hash functions.
-```
-
+    Generates hash values for a key using the specified hash functions.
 <br></li>
-
 <li> <a href='#function-current_hashed_key'><code>
 current_hashed_key(self, key: Hashable, table_index: int) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Computes the hashed key index for a key based on
-the current table index.
-```
-
+    Computes the hashed key index for a key based on
+    the current table index.
 <br></li>
-
 <li> <a href='#function-recapacitate_and_rehash'><code>
 recapacitate_and_rehash(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Recapacitates and rehashes hashtable.
-```
-
+    Recapacitates and rehashes hashtable.
 <br></li>
-
 </ul>
 
-______________________________________________________________________
 
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -768,6 +664,7 @@ ______________________________________________________________________
 <code>__init__</code></h1>
 Initializes a HashTable_open instance with the given capacity
 and hash functions.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -780,8 +677,7 @@ and hash functions.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-one_table_capacity">
@@ -790,18 +686,19 @@ ______________________________________________________________________
 Calculates the capacity of each individual hash table
 within the open addressing scheme.
 
+
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The capacity of one hash table. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-get_hashes">
 <strong>Function</strong>
 <code>get_hashes</code></h1>
 Generates hash values for a key using the specified hash functions.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -812,8 +709,7 @@ Generates hash values for a key using the specified hash functions.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A hash value for the key. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-current_hashed_key">
@@ -821,6 +717,7 @@ ______________________________________________________________________
 <code>current_hashed_key</code></h1>
 Computes the hashed key index for a key based on the
 current table index.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -833,8 +730,7 @@ current table index.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The hashed key index for the key in the specified table. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-elements">
@@ -842,18 +738,19 @@ ______________________________________________________________________
 <code>elements</code></h1>
 Defensive copying of the elements array.
 
+
 <h2>Returns</h2>
 <em>list</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A copy of the elements array. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__setitem__">
 <strong>Function</strong>
 <code>__setitem__</code></h1>
 Adds a key-value pair to the hash table.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -866,14 +763,14 @@ Adds a key-value pair to the hash table.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-update">
 <strong>Function</strong>
 <code>update</code></h1>
 Updates the value associated with a given key in the hash table.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -889,14 +786,14 @@ Updates the value associated with a given key in the hash table.
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if no value is present for the corresponding key. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__delitem__">
 <strong>Function</strong>
 <code>__delitem__</code></h1>
 Removes a key-value pair from the hash table.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -907,14 +804,14 @@ Removes a key-value pair from the hash table.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__getitem__">
 <strong>Function</strong>
 <code>__getitem__</code></h1>
 Retrieves the value associated with a given key in the hash table.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -928,8 +825,7 @@ Retrieves the value associated with a given key in the hash table.
 <strong>KeyError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if no value is found for the corresponding key. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-search">
@@ -938,6 +834,7 @@ ______________________________________________________________________
 Searches for a key in the hash table and returns
 the table index and hashed key index if found,
 or False if not found.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -948,8 +845,7 @@ or False if not found.
 <em>tuple[int, int] or False</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A tuple containing the table index and hashed key index if found, or False if the key is not present in the hash table. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-recapacitate_and_rehash">
@@ -957,12 +853,12 @@ ______________________________________________________________________
 <code>recapacitate_and_rehash</code></h1>
 Recapacitates the hash table and rehashes its contents.
 
+
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-to_dict">
@@ -973,4 +869,4 @@ ______________________________________________________________________
 <em>Returns</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;------- dict A dictionary containing key-value pairs from the hash table. <br>
 
-______________________________________________________________________
+---

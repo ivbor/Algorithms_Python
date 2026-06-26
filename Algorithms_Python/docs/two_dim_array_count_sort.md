@@ -8,8 +8,7 @@ two_dim_array_count_sort(a: list[list[int]], keys: str | list | int = 'all')
 </code></a> <br> </li>
 </ul>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-two_dim_array_count_sort">
@@ -23,6 +22,7 @@ in the order they are presented. Be mindful that this sort populates
 an array with absent places in each row's key position with sentinel
 values (-inf). In this case the ascending sort will always lead to rows
 with absent values being put higher than ones without them.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -38,4 +38,4 @@ with absent values being put higher than ones without them.
 <strong>TypeError</strong> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Raised if the 'keys' argument is of an unsupported type. <br>
 
-______________________________________________________________________
+---

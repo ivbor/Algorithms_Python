@@ -108,9 +108,14 @@ def parse_module_doc(module_doc, output):
     present_sections = {module_doc.find(i): i
                         for i in ['Constants', 'Functions', 'Classes']}
     positions = sorted([i for i in present_sections.keys()])
+    section_positions = [i for i in positions if i != -1]
+    if len(section_positions) == 0:
+        output.append(' '.join(module_doc.split('\n')[1:]))
+        output.append('---')
+        return
     module_desc = module_doc[module_doc.find('\n',
                                              module_doc.find('\n') + 1):min(
-                                    [i for i in positions if i != -1])]
+                                    section_positions)]
     output.append(' '.join(module_desc.split('\n')))
     for position, section in present_sections.items():
         # the section is not present
@@ -149,8 +154,12 @@ def parse_func_doc(node, output):
                         for i in ['Parameters', 'Returns',
                                   'Raises', 'Yields']}
     positions = sorted([i for i in present_sections.keys()])
-    func_desc = docstring[:min(
-        [i for i in positions if i != -1])]
+    section_positions = [i for i in positions if i != -1]
+    if len(section_positions) == 0:
+        output.append(docstring)
+        output.append('\n---')
+        return
+    func_desc = docstring[:min(section_positions)]
     output.append(func_desc)
     for position, section in present_sections.items():
         # the section is not present
@@ -188,8 +197,12 @@ def parse_class_doc(node, output):
     present_sections = {docstring.find(i): i
                         for i in ['Attributes', 'Methods']}
     positions = sorted([i for i in present_sections.keys()])
-    func_desc = docstring[:min(
-        [i for i in positions if i != -1])]
+    section_positions = [i for i in positions if i != -1]
+    if len(section_positions) == 0:
+        output.append(docstring)
+        output.append('\n---')
+        return
+    func_desc = docstring[:min(section_positions)]
     output.append(func_desc)
     for position, section in present_sections.items():
         # the section is not present
@@ -220,6 +233,8 @@ def parse_docstrings(file_docstrings, output_file):
     tree = ast.parse(file_docstrings)
     output = []
     module_doc = ast.get_docstring(tree)
+    if module_doc is None:
+        return
     parse_module_doc(module_doc, output)
     for nr, node in enumerate(ast.iter_child_nodes(tree)):
         if nr == 0 or not (isinstance(node, ast.FunctionDef) or
@@ -233,7 +248,7 @@ def parse_docstrings(file_docstrings, output_file):
         out.write('\n'.join(output))
 
 
-exclude_patterns = ['__init__', 'tests', 'docs', '__pycache__']
+exclude_patterns = ['__init__', 'tests', 'docs', '__pycache__', 'venv']
 open('Table_of_contents.md', 'w').close()
 
 
@@ -247,8 +262,13 @@ for root, dirs, files in os.walk('../'):
             print('Success')
             # __init__.py parsing
         if name == '__init__.py':
+            if any([i in root for i in exclude_patterns]):
+                continue
             print(os.path.join(root, name))
             file = open(os.path.join(root, name), 'r').read()
+            docstring = ast.get_docstring(ast.parse(file))
+            if docstring is None:
+                continue
             out = open('Table_of_contents.md', 'a')
-            out.write(ast.get_docstring(ast.parse(file)) + '\n')
+            out.write(docstring + '\n')
             out.close()

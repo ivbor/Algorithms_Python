@@ -7,38 +7,25 @@ digit_sort(array: list[int], base: int = 10) -> list[int]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Sort a list of non-negative integers using the digit sort algorithm.
-```
-
+    Sort a list of non-negative integers using the digit sort algorithm.
 <br></li>
-
 <li> <a href='#function-to_m_based'><code>
 to_m_based(number: int, base: int) -> list[int]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Convert a decimal number to an M-based representation.
-```
-
+    Convert a decimal number to an M-based representation.
 <br></li>
-
 <li> <a href='#function-restore_to_nums'><code>
 restore_to_nums(array: list[int], base: int = 10) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Restore an M-based representation to its decimal form.
-```
-
+    Restore an M-based representation to its decimal form.
 <br></li>
-
 </ul>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-to_m_based">
@@ -52,6 +39,7 @@ is returned as a list of digits in the M-based representation.
 Optionally, you can choose to return the result as an array or
 restore it to its original decimal form.
 
+
 <h2>Parameters</h2>
 <ul>
 <li> <strong>number</strong>: <em>int</em> <br>
@@ -63,8 +51,7 @@ restore it to its original decimal form.
 <em>list[int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A list of integers representing the M-based representation of the decimal number. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-restore_to_nums">
@@ -77,6 +64,7 @@ representation and restores it to its original decimal form.
 You can specify the base (M) used for the representation,
 which defaults to 10 for decimal restoration.
 
+
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list[int]</em> <br>
@@ -88,8 +76,7 @@ which defaults to 10 for decimal restoration.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The decimal number restored from the M-based representation. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-digit_sort">
@@ -107,6 +94,7 @@ It is important that the amount of digits can be reduced by
 changing the base for the integers. Hence, when k = 1 this sort
 appears to be counting sort with O(n) time complexity.
 
+
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list[int]</em> <br>
@@ -117,8 +105,7 @@ base: int The array's integers' base depending on which number of digits will be
 <em>list[int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A sorted list of non-negative integers. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-digit_sort_opt">
@@ -127,6 +114,7 @@ ______________________________________________________________________
 Sort a list of non-negative integers using the digit + radix sort
 algorithm.
 
+
 <h2>Parameters</h2>
 <ul>
 <li> <strong>array</strong>: <em>list[int]</em> <br>
@@ -137,4 +125,4 @@ base: int The array's integers' base depending on which number of digits will be
 <em>list[int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;A sorted list of non-negative integers. <br>
 
-______________________________________________________________________
+---

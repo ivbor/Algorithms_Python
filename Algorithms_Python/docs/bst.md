@@ -24,6 +24,7 @@ BinarySearchTree
 A class representing a node in the Binary Search Tree.
 Also a basic class to inherit from for more complicated tree nodes.
 
+
 <h2>Attributes</h2>
 <ul>
 <li> <strong>left</strong>: <em>TreeNode | None</em> <br>
@@ -32,8 +33,7 @@ Also a basic class to inherit from for more complicated tree nodes.
 &nbsp;&nbsp;&nbsp;&nbsp;The right child of the node if present, else - None. Default is None. <br></li>
 </ul>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -41,6 +41,7 @@ ______________________________________________________________________
 <code>__init__</code></h1>
 Initializes a new instance of the TreeNode class with the specified
 data.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -51,14 +52,14 @@ data.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="class-BinarySearchTree">
 <strong>Class</strong>
 <code>BinarySearchTree</code></h1>
 A class representing a Binary Search Tree.
+
 
 <h2>Attributes</h2>
 <ul>
@@ -74,212 +75,140 @@ __init__(self) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Initializes a new instance of the BinarySearchTree class.
-```
-
+    Initializes a new instance of the BinarySearchTree class.
 <br></li>
-
 <li> <a href='#function-insert'><code>
 insert(self, data: int | float) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Inserts a new element with the specified data into the Binary Search
-Tree.
-```
-
+    Inserts a new element with the specified data into the Binary Search
+    Tree.
 <br></li>
-
 <li> <a href='#function-_insert'><code>
 _insert(self, root: TreeNode, new_node: TreeNode) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Recursively inserts a new node into the Binary Search Tree.
-```
-
+    Recursively inserts a new node into the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-delete'><code>
 delete(self, data: int | float) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Deletes the node with the specified data from the Binary Search Tree.
-```
-
+    Deletes the node with the specified data from the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-_delete'><code>
 _delete(self, node: TreeNode) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Recursively deletes the specified node from the Binary Search Tree.
-```
-
+    Recursively deletes the specified node from the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-search'><code>
 search(self, data: int | float) -> TreeNode
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Searches for a node with the specified data in the Binary Search Tree.
-```
-
+    Searches for a node with the specified data in the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-_search'><code>
 _search(self, root: TreeNode, data: int | float) -> TreeNode
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Recursively searches for a node with the specified data in the
-Binary Search Tree.
-```
-
+    Recursively searches for a node with the specified data in the
+    Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-in_order_traversal'><code>
 in_order_traversal(self) -> list[int | float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Performs an in-order traversal of the Binary Search Tree and returns
-a list of elements.
-```
-
+    Performs an in-order traversal of the Binary Search Tree and returns
+    a list of elements.
 <br></li>
-
 <li> <a href='#function-_in_order_traversal_rec'><code>
 _in_order_traversal_rec(self, root: TreeNode, result: list) -> None
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Recursively performs an in-order traversal of the Binary Search Tree.
-```
-
+    Recursively performs an in-order traversal of the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-find_min'><code>
 find_min(self) -> int | float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Finds the minimum value in the Binary Search Tree.
-```
-
+    Finds the minimum value in the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-_min_value_node'><code>
 _min_value_node(self, node: TreeNode) -> TreeNode
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Finds the node with the minimum value in the Binary Search Tree.
-```
-
+    Finds the node with the minimum value in the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-find_max'><code>
 find_max(self) -> int | float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Finds the maximum value in the Binary Search Tree.
-```
-
+    Finds the maximum value in the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-_max_value_node'><code>
 _max_value_node(self, node: TreeNode) -> TreeNode
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Finds the node with the maximum value in the Binary Search Tree.
-```
-
+    Finds the node with the maximum value in the Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-find_successor'><code>
 find_successor(self, data: int | float) -> int | float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Finds the successor of the node with the specified data in the
-Binary Search Tree.
-```
-
+    Finds the successor of the node with the specified data in the
+    Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-find_predecessor'><code>
 find_predecessor(self, data: int | float) -> int | float
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Finds the predecessor of the node with the specified data in the
-Binary Search Tree.
-```
-
+    Finds the predecessor of the node with the specified data in the
+    Binary Search Tree.
 <br></li>
-
 <li> <a href='#function-is_empty'><code>
 is_empty(self) -> bool
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Checks if the Binary Search Tree is empty.
-```
-
+    Checks if the Binary Search Tree is empty.
 <br></li>
-
 <li> <a href='#function-max_height'><code>
 max_height(self) -> int
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Finds the maximum height of the tree.
-```
-
+    Finds the maximum height of the tree.
 <br></li>
-
 <li> <a href='#function-local_tree'><code>
 local_tree(self, node: TreeNode, b: int = 2, deepness: int = 1)
  -> list[int | float]
 </code></a> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 
-```
-Returns the local tree with the node being root and the required
-deepness. Nodes' data is loaded into the list down from root from
-the left to the right. Deepness 1 equals root and its children.
-b is the order of the tree, for the binary it is 2.
-```
-
+    Returns the local tree with the node being root and the required
+    deepness. Nodes' data is loaded into the list down from root from
+    the left to the right. Deepness 1 equals root and its children.
+    b is the order of the tree, for the binary it is 2.
 <br></li>
-
 </ul>
 
-______________________________________________________________________
 
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-__init__">
@@ -287,12 +216,12 @@ ______________________________________________________________________
 <code>__init__</code></h1>
 Initializes a new instance of the BinarySearchTree class.
 
+
 <h2>Returns</h2>
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-insert">
@@ -300,6 +229,7 @@ ______________________________________________________________________
 <code>insert</code></h1>
 Inserts a new element with the specified data into the Binary
 Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -310,14 +240,14 @@ Search Tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_insert">
 <strong>Function</strong>
 <code>_insert</code></h1>
 Recursively inserts a new node into the Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -330,14 +260,14 @@ Recursively inserts a new node into the Binary Search Tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-delete">
 <strong>Function</strong>
 <code>delete</code></h1>
 Deletes the node with the specified data from the Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -348,14 +278,14 @@ Deletes the node with the specified data from the Binary Search Tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_delete">
 <strong>Function</strong>
 <code>_delete</code></h1>
 Recursively deletes the specified node from the Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -366,8 +296,7 @@ Recursively deletes the specified node from the Binary Search Tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-search">
@@ -375,6 +304,7 @@ ______________________________________________________________________
 <code>search</code></h1>
 Searches for a node with the specified data in the Binary Search Tree.
 In case of value duplicate returns only one node at random.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -385,8 +315,7 @@ In case of value duplicate returns only one node at random.
 <em>TreeNode | None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;TreeNode containing the data required or None if such TreeNode was not found. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_search">
@@ -394,6 +323,7 @@ ______________________________________________________________________
 <code>_search</code></h1>
 Recursively searches for a node with the specified data in the
 Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -406,14 +336,14 @@ Binary Search Tree.
 <em>TreeNode | None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;TreeNode containing the data required or None if such TreeNode was not found. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-node_height">
 <strong>Function</strong>
 <code>node_height</code></h1>
 Finds the height of the node with value.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -424,8 +354,7 @@ Finds the height of the node with value.
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Node height. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-in_order_traversal">
@@ -434,18 +363,19 @@ ______________________________________________________________________
 Performs an in-order traversal of the Binary Search Tree and returns
 a list of elements.
 
+
 <h2>Returns</h2>
 <em>list[int | float]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The list of elements in increasing order. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_in_order_traversal_rec">
 <strong>Function</strong>
 <code>_in_order_traversal_rec</code></h1>
 Recursively performs an in-order traversal of the Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -458,8 +388,7 @@ Recursively performs an in-order traversal of the Binary Search Tree.
 <em>None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp; <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-find_min">
@@ -467,18 +396,19 @@ ______________________________________________________________________
 <code>find_min</code></h1>
 Finds the minimum value in the Binary Search Tree.
 
+
 <h2>Returns</h2>
 <em>int | float | None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The min if it was found, None otherwise. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_min_value_node">
 <strong>Function</strong>
 <code>_min_value_node</code></h1>
 Finds the node with the minimum value in the Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -489,8 +419,7 @@ Finds the node with the minimum value in the Binary Search Tree.
 <em>TreeNode</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;TreeNode containing the minimum value. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-find_max">
@@ -498,18 +427,19 @@ ______________________________________________________________________
 <code>find_max</code></h1>
 Finds the maximum value in the Binary Search Tree.
 
+
 <h2>Returns</h2>
 <em>int | float | None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The maximum value if it was found, None otherwise. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-_max_value_node">
 <strong>Function</strong>
 <code>_max_value_node</code></h1>
 Finds the node with the maximum value in the Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -520,8 +450,7 @@ Finds the node with the maximum value in the Binary Search Tree.
 <em>TreeNode</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The node containing the maximum value. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-find_successor">
@@ -529,6 +458,7 @@ ______________________________________________________________________
 <code>find_successor</code></h1>
 Finds the successor of the node with the specified data in the
 Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -539,8 +469,7 @@ Binary Search Tree.
 <em>int | float | None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The successor to the data. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-find_predecessor">
@@ -548,6 +477,7 @@ ______________________________________________________________________
 <code>find_predecessor</code></h1>
 Finds the predecessor of the node with the specified data in the
 Binary Search Tree.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -558,8 +488,7 @@ Binary Search Tree.
 <em>int | float | None</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The predecessor to the data. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-is_empty">
@@ -567,12 +496,12 @@ ______________________________________________________________________
 <code>is_empty</code></h1>
 Checks if the Binary Search Tree is empty.
 
+
 <h2>Returns</h2>
 <em>bool</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;True if the BST is empty, False otherwise. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-max_height">
@@ -580,12 +509,12 @@ ______________________________________________________________________
 <code>max_height</code></h1>
 The maximum height of the tree.
 
+
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The height of the tree. <br>
 
-______________________________________________________________________
-
+---
 <div style="page-break-after: always; visibility: hidden"></div>
 <br>
 <h1 id="function-local_tree">
@@ -595,6 +524,7 @@ Makes the local tree with the node being root and the required
 deepness. Nodes' data is loaded into the list down from root from
 the left to the right. Deepness 1 equals root and its children.
 b is the order of the tree, for binary it is 2.
+
 
 <h2>Parameters</h2>
 <ul>
@@ -609,4 +539,4 @@ b is the order of the tree, for binary it is 2.
 <em>list[int | float]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;List containing the tree nodes' data. <br>
 
-______________________________________________________________________
+---
