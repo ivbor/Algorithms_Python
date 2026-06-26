@@ -5,8 +5,7 @@ Utility helpers for explicit **bytes ⇔ str** conversions.
 
 This revision adds *table‑driven* codecs so you can convert **without** relying
 on Python’s implicit ``bytes(data)`` or ``str.encode/bytes.decode`` helpers.
-A few widely used single‑byte encodings come pre‑loaded; others fall back
-to the built‑in codecs (written in CPython).
+A few widely used single‑byte encodings come pre‑loaded.
 
 Functions
 ~~~~~~~~~
@@ -14,8 +13,7 @@ Functions
 - **to_str(data, encoding="utf-8")**    → smart decode (unchanged).
 - **to_bytes(data, encoding="utf-8")**  → smart encode (unchanged).
 - **to_str_explicit(...)** / **to_bytes_explicit(...)**
-  Table‑driven conversions that *never* call ``decode`` / ``encode`` unless no
-  map is available.
+  Table‑driven conversions that *never* call ``decode`` / ``encode``.
 - **available_encodings()**            → runtime codec list.
 
 The explicit helpers use frozen mapping tables (``MappingProxyType``) built from
@@ -34,6 +32,7 @@ from typing import Union, Mapping, Optional
 # Alias → Canonical mapping
 # ---------------------------------------------------------------------------
 _ENCODING_ALIASES: dict[str, str] = {
+    "ascii": "ascii",
     "utf8": "utf-8",
     "utf16": "utf-16",
     "utf32": "utf-32",
@@ -73,6 +72,11 @@ _SINGLE_BYTE_ENCODINGS = [
 
 def _load_decoding_map(encoding: str) -> Mapping[int, str]:
     """Return *immutable* mapping {byte:int→char:str}; empty if unavailable."""
+    if encoding == "ascii":
+        return MappingProxyType({i: chr(i) for i in range(128)})
+    if encoding == "latin-1":
+        return MappingProxyType({i: chr(i) for i in range(256)})
+
     try:
         mod = importlib.import_module(f"encodings.{encoding.replace('-', '_')}")
     except ModuleNotFoundError:
@@ -106,9 +110,9 @@ def _charmap_decode(
         data: bytes | bytearray | memoryview,
         enc: str, errors: str) -> str:
     mapping = _ENCODING_MAPS.get(enc)
-    if not mapping:  # Fallback to builtin if we don’t have a table
-        print("no suitable mapping found, trying python's converter")
-        return bytes(data).decode(enc, errors)
+    if not mapping:
+        raise LookupError(
+            f"no explicit decoding map available for encoding: {enc}")
 
     chars: list[str] = []
     for idx, b in enumerate(bytes(data)):
@@ -132,8 +136,8 @@ def _charmap_decode(
 def _charmap_encode(text: str, enc: str, errors: str) -> bytes:
     rmap = _ENCODING_REVERSE_MAPS.get(enc)
     if not rmap:
-        print("no suitable mapping found, trying python's converter")
-        return text.encode(enc, errors)
+        raise LookupError(
+            f"no explicit encoding map available for encoding: {enc}")
 
     out = bytearray()
     for idx, ch in enumerate(text):

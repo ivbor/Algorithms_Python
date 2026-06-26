@@ -230,5 +230,10 @@ Contents
 [source code](../edit_distance.py),
 [tests](../tests/test_edit_distance.py)
 
+  - String algorithms:
+[docs](./string_algorithms.md),
+[source code](../string_algorithms.py),
+[tests](../tests/test_string_algorithms.py)
+
 ---
 """
