@@ -14,10 +14,10 @@ mdformat
 numpy>=1.22.0
 zipp>=3.19.1
 ipython>=8.10.0
-tornado>=6.3.2
+tornado>=6.5
 anyio>=4.4.0
 fonttools>=4.43.0
-jupyter-server>=2.7.2
+jupyter-server>=2.14.1
 jupyter-core>=5.8.0
 pillow>=10.0.0
-setuptools>=70.0.0
+setuptools>=78.1.1
