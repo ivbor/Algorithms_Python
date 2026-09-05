@@ -2,9 +2,10 @@ import pytest
 
 from Algorithms_Python.string_algorithms import (
     are_anagrams, are_anagrams_brute_force,
-    find_pattern_brute_force, is_palindrome,
+    boyer_moore, find_pattern_brute_force, is_palindrome,
     is_palindrome_brute_force, kmp, prefix_function,
-    rabin_karp, z_algorithm
+    kasai_lcp, rabin_karp, suffix_array_sa_is,
+    z_algorithm
 )
 
 
@@ -45,6 +46,7 @@ def test_pattern_search(text, pattern, expected):
     assert find_pattern_brute_force(text, pattern) == expected
     assert rabin_karp(text, pattern) == expected
     assert kmp(text, pattern) == expected
+    assert boyer_moore(text, pattern) == expected
 
 
 def test_rabin_karp_matches_brute_force_for_unicode_text():
@@ -85,3 +87,51 @@ def test_z_algorithm(text, expected):
 def test_kmp_pattern_search(text, pattern, expected):
     assert kmp(text, pattern) == expected
     assert kmp(text, pattern) == find_pattern_brute_force(text, pattern)
+
+
+@pytest.mark.parametrize("text, pattern, expected",
+                         (("HERE IS A SIMPLE EXAMPLE", "EXAMPLE", [17]),
+                          ("abcxabcdabxabcdabcdabcy", "abcdabcy", [15]),
+                          ("abababab", "abab", [0, 2, 4]),
+                          ("aaaaa", "aaa", [0, 1, 2]),
+                          ("mississippi", "issi", [1, 4]),
+                          ("zażółć zażółć", "żół", [2, 9])))
+def test_boyer_moore_pattern_search(text, pattern, expected):
+    assert boyer_moore(text, pattern) == expected
+    assert boyer_moore(text, pattern) == \
+        find_pattern_brute_force(text, pattern)
+
+
+@pytest.mark.parametrize("text, expected",
+                         (("", []),
+                          ("a", [0]),
+                          ("aaaa", [3, 2, 1, 0]),
+                          ("banana", [5, 3, 1, 0, 4, 2]),
+                          ("mississippi",
+                           [10, 7, 4, 1, 0, 9, 8, 6, 3, 5, 2]),
+                          ("abracadabra",
+                           [10, 7, 0, 3, 5, 8, 1, 4, 6, 9, 2]),
+                          ("zażółć zażółć",
+                           [6, 8, 1, 7, 0, 10, 3, 12, 5, 11, 4, 9, 2])))
+def test_suffix_array_sa_is(text, expected):
+    assert suffix_array_sa_is(text) == expected
+
+
+@pytest.mark.parametrize("text, expected",
+                         (("", []),
+                          ("a", []),
+                          ("banana", [1, 3, 0, 0, 2]),
+                          ("mississippi",
+                           [1, 1, 4, 0, 0, 1, 0, 2, 1, 3]),
+                          ("abracadabra",
+                           [1, 4, 1, 1, 0, 3, 0, 0, 0, 2])))
+def test_kasai_lcp(text, expected):
+    suffix_array = suffix_array_sa_is(text)
+    assert kasai_lcp(text, suffix_array) == expected
+
+
+def test_kasai_lcp_rejects_invalid_suffix_array():
+    with pytest.raises(ValueError):
+        kasai_lcp("abc", [0, 1])
+    with pytest.raises(ValueError):
+        kasai_lcp("abc", [0, 1, 1])

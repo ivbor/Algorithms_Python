@@ -18,6 +18,9 @@ KnapsackProblem
 LongestCommonSubsequence
     Class for searching for LongestCommonSubsequence in the string.
 
+LongestPalindromicSubsequence
+    Class for finding the LongestPalindromicSubsequence in the string.
+
 DamerauLevensteinDistance
     Class for calculating edit distance between strings using
     Damerau-Levenstein approach.
@@ -232,6 +235,103 @@ class LongestCommonSubsequence(DynamicProgrammingProblem):
                 else:
                     self.dp[i][j] = max(self.dp[i - 1][j], self.dp[i][j - 1])
         return self.dp[self.m][self.n]
+
+
+class LongestPalindromicSubsequence(DynamicProgrammingProblem):
+    """
+    Class for finding the Longest Palindromic Subsequence (LPS).
+
+    A subsequence keeps the original order of characters, but it may skip
+    characters. That is why this problem is different from the longest
+    palindromic substring problem, where the chosen characters must be
+    contiguous.
+
+    Dynamic programming works by solving every interval text[left:right + 1].
+    If both ends are equal, they can be wrapped around the best answer inside
+    the interval. Otherwise one of the ends must be skipped.
+
+    Attributes
+    ----------
+    text: str
+        String where LPS will be determined and its length found.
+
+    Methods
+    -------
+    solve(self) -> int
+        Finds the length of the Longest Palindromic Subsequence.
+
+    """
+
+    def __init__(self, text):
+        '''
+            Creates an instance of the LongestPalindromicSubsequence class
+
+            Parameters
+            ----------
+            text: str
+                String where to find the length of the LPS.
+
+            Returns
+            -------
+            None
+        '''
+        super().__init__()
+        self.text = text
+        self.n = len(text)
+
+    def solve(self):
+        """
+        Finds the length of the Longest Palindromic Subsequence (LPS).
+
+        Returns
+        -------
+        int
+            The length of the Longest Palindromic Subsequence.
+
+        """
+        if self.n == 0:
+            self.dp = []
+            return 0
+
+        # dp[left][right] stores the LPS length inside the closed interval:
+        #
+        #     text:  b b b a b
+        #            ^     ^
+        #          left   right
+        #
+        # Every one-character interval is already a palindrome of length 1.
+        self.dp = [[0] * self.n for _ in range(self.n)]
+        for index in range(self.n):
+            self.dp[index][index] = 1
+
+        # Shorter intervals must be solved before longer intervals because
+        # dp[left][right] depends on:
+        #
+        #   dp[left + 1][right - 1]  when both ends are used,
+        #   dp[left + 1][right]      when the left end is skipped,
+        #   dp[left][right - 1]      when the right end is skipped.
+        for interval_length in range(2, self.n + 1):
+            for left in range(self.n - interval_length + 1):
+                right = left + interval_length - 1
+
+                if self.text[left] == self.text[right]:
+                    # Matching ends can sit at the two ends of a palindrome.
+                    # For a two-character interval the inside length is zero;
+                    # otherwise reuse the already solved inner interval.
+                    inside = 0
+                    if interval_length > 2:
+                        inside = self.dp[left + 1][right - 1]
+                    self.dp[left][right] = inside + 2
+                else:
+                    # If the ends do not match, no optimal palindrome can use
+                    # both ends together. Try dropping either side and keep the
+                    # better interval.
+                    self.dp[left][right] = max(
+                        self.dp[left + 1][right],
+                        self.dp[left][right - 1],
+                    )
+
+        return self.dp[0][self.n - 1]
 
 
 class DamerauLevensteinDistance(DynamicProgrammingProblem):

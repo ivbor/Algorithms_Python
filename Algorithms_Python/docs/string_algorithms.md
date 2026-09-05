@@ -66,6 +66,27 @@ kmp(text: str, pattern: str) -> list[int]
 
     Finds all pattern occurrences using Knuth-Morris-Pratt algorithm.
 <br></li>
+<li> <a href='#function-boyer_moore'><code>
+boyer_moore(text: str, pattern: str) -> list[int]
+</code></a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+    Finds all pattern occurrences using Boyer-Moore algorithm.
+<br></li>
+<li> <a href='#function-suffix_array_sa_is'><code>
+suffix_array_sa_is(text: str) -> list[int]
+</code></a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+    Builds a suffix array using the SA-IS induced sorting algorithm.
+<br></li>
+<li> <a href='#function-kasai_lcp'><code>
+kasai_lcp(text: str, suffix_array: list[int]) -> list[int]
+</code></a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+    Builds an LCP array from text and its suffix array using Kasai algorithm.
+<br></li>
 </ul>
 
 ---
@@ -280,5 +301,86 @@ Space complexity: O(m + r), where r is the number of returned matches.
 <h2>Returns</h2>
 <em>list[int]</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;Starting indexes of all pattern occurrences. <br>
+
+---
+<div style="page-break-after: always; visibility: hidden"></div>
+<br>
+<h1 id="function-boyer_moore">
+<strong>Function</strong>
+<code>boyer_moore</code></h1>
+Find all pattern occurrences using Boyer-Moore algorithm.
+
+Boyer-Moore compares a pattern window from right to left. When a mismatch
+happens, it shifts the pattern by the larger of two safe jumps:
+
+* bad-character shift: align the mismatched text character with its last
+  possible occurrence in the pattern before the mismatch position;
+* good-suffix shift: keep the already matched suffix aligned with another
+  occurrence of that suffix in the pattern, or with a matching prefix.
+
+Time complexity: O(n * m) in the worst case for this educational version,
+where n is text length and m is pattern length. It is usually sublinear in
+practice because it can skip many text positions.
+Space complexity: O(m + k), where k is the number of distinct pattern
+characters.
+
+
+<h2>Parameters</h2>
+<ul>
+<li> <strong>text</strong>: <em>str</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Text in which to search. <br></li>
+<li> <strong>pattern</strong>: <em>str</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Pattern to search for. <br></li>
+</ul>
+<h2>Returns</h2>
+<em>list[int]</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Starting indexes of all pattern occurrences.  Examples -------- >>> boyer_moore("abracadabra", "abra") [0, 7] <br>
+
+---
+<div style="page-break-after: always; visibility: hidden"></div>
+<br>
+<h1 id="function-suffix_array_sa_is">
+<strong>Function</strong>
+<code>suffix_array_sa_is</code></h1>
+Build a suffix array using the SA-IS induced sorting algorithm.
+
+Time complexity: O(n)
+Space complexity: O(n)
+
+
+<h2>Parameters</h2>
+<ul>
+<li> <strong>text</strong>: <em>str</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;String for which the suffix array is built. <br></li>
+</ul>
+<h2>Returns</h2>
+<em>list[int]</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Starting indexes of all suffixes in lexicographic order.  Examples -------- >>> suffix_array_sa_is("banana") [5, 3, 1, 0, 4, 2] <br>
+
+---
+<div style="page-break-after: always; visibility: hidden"></div>
+<br>
+<h1 id="function-kasai_lcp">
+<strong>Function</strong>
+<code>kasai_lcp</code></h1>
+Build an LCP array from text and its suffix array using Kasai algorithm.
+
+lcp[i] is the longest common prefix length of suffixes starting at
+suffix_array[i] and suffix_array[i + 1].
+
+Time complexity: O(n)
+Space complexity: O(n)
+
+
+<h2>Parameters</h2>
+<ul>
+<li> <strong>text</strong>: <em>str</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Original text. <br></li>
+<li> <strong>suffix_array</strong>: <em>list[int]</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Suffix array of the text. <br></li>
+</ul>
+<h2>Returns</h2>
+<em>list[int]</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;LCP values for adjacent suffixes in suffix-array order.  Examples -------- >>> kasai_lcp("banana", [5, 3, 1, 0, 4, 2]) [1, 3, 0, 0, 2] <br>
 
 ---

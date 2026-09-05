@@ -17,5 +17,6 @@ pyvenv.cfg
 pytest.log
 Algorithms_Python/C_solutions/logs/**
 Algorithms_Python/C_solutions/test.in
+Algorithms_Python/tests/artifacts/**
 **venv**
 C_solutions/**bin**

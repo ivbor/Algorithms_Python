@@ -8,6 +8,9 @@ If you want source notebooks - they are provided here too
 
 * Tuning notebooks and markdowns for [merge_sort](merge_sort_tuning.md)
 
+* Stress-test timing notes for
+[string algorithms](string_algorithms_stress_results.md)
+
 * Animations:
 
   * Of merge_sort

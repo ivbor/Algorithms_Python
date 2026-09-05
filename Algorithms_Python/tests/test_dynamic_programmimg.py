@@ -8,6 +8,7 @@ from ctypes import c_int, POINTER, CDLL, c_char
 from Algorithms_Python.dynamic_programming \
     import DynamicProgrammingProblem,  KnapsackProblem, \
     DamerauLevensteinDistance, LongestCommonSubsequence, \
+    LongestPalindromicSubsequence, \
     LongestIncreasingSubsequence, maxSubarraySum, TravellingSalesmanProblem
 
 
@@ -176,6 +177,35 @@ def test_lcs_symmetry():
                           (('abc', 'abc'), 3)])
 def test_some_lcs_test_cases(test_input, test_output):
     assert LongestCommonSubsequence(*test_input).solve() == test_output
+
+
+@pytest.mark.parametrize('text, expected',
+                         [('bbbab', 4),
+                          ('cbbd', 2),
+                          ('character', 5),
+                          ('agbdba', 5),
+                          ('abcXYZdefZYXcba', 13),
+                          ('aaaaaa', 6),
+                          ('abcdef', 1),
+                          ('a', 1),
+                          ('', 0)])
+def test_some_lps_test_cases(text, expected):
+    assert LongestPalindromicSubsequence(text).solve() == expected
+
+
+def test_lps_keeps_subsequence_not_substring():
+    instance = LongestPalindromicSubsequence('bbbab')
+
+    assert instance.solve() == 4
+    assert instance.dp[0][4] == 4
+    assert instance.dp[0][3] == 3
+
+
+def test_lps_empty_string_has_empty_dp_table():
+    instance = LongestPalindromicSubsequence('')
+
+    assert instance.solve() == 0
+    assert instance.dp == []
 
 
 # test cases are from here:

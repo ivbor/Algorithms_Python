@@ -43,6 +43,10 @@ jobs:
     - name: Check tests coverage
       run: |
         coverage report -m
+    - name: Run task-oriented string stress tests
+      run: >
+        pytest Algorithms_Python/tests/test_string_algorithm_tasks.py
+        -o addopts='-v --show-capture=no'
 
   docs-coverage:
     runs-on: ubuntu-latest

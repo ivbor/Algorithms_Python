@@ -20,6 +20,12 @@ LongestCommonSubsequence
 &nbsp;&nbsp;&nbsp;&nbsp;
     Class for searching for LongestCommonSubsequence in the string.
 <br></li>
+<li> <a href='#class-LongestPalindromicSubsequence'><code>
+LongestPalindromicSubsequence
+</code></a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+    Class for finding the LongestPalindromicSubsequence in the string.
+<br></li>
 <li> <a href='#class-DamerauLevensteinDistance'><code>
 DamerauLevensteinDistance
 </code></a> <br>
@@ -235,6 +241,72 @@ Finds the Longest Common Subsequence (LCS) of two strings.
 <h2>Returns</h2>
 <em>int</em> <br>
 &nbsp;&nbsp;&nbsp;&nbsp;The length of the LCS. <br>
+
+---
+<div style="page-break-after: always; visibility: hidden"></div>
+<br>
+<h1 id="class-LongestPalindromicSubsequence">
+<strong>Class</strong>
+<code>LongestPalindromicSubsequence</code></h1>
+Class for finding the Longest Palindromic Subsequence (LPS).
+
+A subsequence keeps the original order of characters, but it may skip
+characters. That is why this problem is different from the longest
+palindromic substring problem, where the chosen characters must be
+contiguous.
+
+Dynamic programming works by solving every interval text[left:right + 1].
+If both ends are equal, they can be wrapped around the best answer inside
+the interval. Otherwise one of the ends must be skipped.
+
+
+<h2>Attributes</h2>
+<ul>
+<li> <strong>text</strong>: <em>str</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;String where LPS will be determined and its length found. <br></li>
+</ul>
+<h2>Methods</h2>
+<ul>
+<li> <a href='#function-solve'><code>
+solve(self) -> int
+</code></a> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+
+    Finds the length of the Longest Palindromic Subsequence.
+<br></li>
+</ul>
+
+
+---
+<div style="page-break-after: always; visibility: hidden"></div>
+<br>
+<h1 id="function-__init__">
+<strong>Function</strong>
+<code>__init__</code></h1>
+Creates an instance of the LongestPalindromicSubsequence class
+
+
+<h2>Parameters</h2>
+<ul>
+<li> <strong>text</strong>: <em>str</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;String where to find the length of the LPS. <br></li>
+</ul>
+<h2>Returns</h2>
+<em>None</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp; <br>
+
+---
+<div style="page-break-after: always; visibility: hidden"></div>
+<br>
+<h1 id="function-solve">
+<strong>Function</strong>
+<code>solve</code></h1>
+Finds the length of the Longest Palindromic Subsequence (LPS).
+
+
+<h2>Returns</h2>
+<em>int</em> <br>
+&nbsp;&nbsp;&nbsp;&nbsp;The length of the Longest Palindromic Subsequence. <br>
 
 ---
 <div style="page-break-after: always; visibility: hidden"></div>
